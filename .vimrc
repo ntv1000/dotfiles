@@ -7,6 +7,12 @@ set number
 set ignorecase
 " highlight search results
 set hlsearch
+" keep cursor in the middle
+set scrolloff=9999
+" search while typing
+set incsearch
+" for easier jump to mark
+map ´ `
 " auto indent by analysing filetype
 filetype on
 filetype indent plugin on
