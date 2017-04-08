@@ -1,0 +1,5 @@
+[user]
+	email = christian.ntv1000@gmail.com
+	name = ntv1000
+[credential]
+	helper = cache timeout=36000
