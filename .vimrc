@@ -1,5 +1,7 @@
 let mapleader = ","
 execute pathogen#infect()
+" set internal encoding to UTF-8
+set encoding=utf-8
 " show line number
 set number
 "set autoread
