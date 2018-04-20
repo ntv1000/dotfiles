@@ -4,6 +4,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 " load plugins
 Plug 'bitc/vim-bad-whitespace'
 
+call plug#end()
+
 " set internal encoding to UTF-8
 set encoding=utf-8
 " show line number
