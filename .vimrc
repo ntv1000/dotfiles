@@ -1,5 +1,9 @@
 let mapleader = ","
-execute pathogen#infect()
+call plug#begin('~/.local/share/nvim/plugged')
+
+" load plugins
+Plug 'bitc/vim-bad-whitespace'
+
 " set internal encoding to UTF-8
 set encoding=utf-8
 " show line number
