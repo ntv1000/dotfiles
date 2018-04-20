@@ -59,3 +59,5 @@ function parse_git_dirty {
 
 # set prompt text
 export PS1="\[\e[92m\]\u@\h\[\e[m\]:\[\e[36m\]\w\[\e[m\]\[\e[31m\]\`parse_git_branch\`\[\e[m\]\\$ "
+
+alias vim='nvim -u ~/.vimrc'
