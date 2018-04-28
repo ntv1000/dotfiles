@@ -29,6 +29,9 @@ set updatetime=100
 set encoding=utf-8
 " show line number
 set number
+" set tab width
+set tabstop=4
+set shiftwidth=4
 "set autoread
 " make searches case INsensitive
 set ignorecase
