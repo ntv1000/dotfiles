@@ -13,10 +13,13 @@ fi
 # get current branch in git repo
 function parse_git_branch() {
 	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
-	if [ ! "${BRANCH}" == "" ]
-	then
-		STAT=`parse_git_dirty`
-		echo " [${BRANCH}${STAT}]"
+	if [ ! "${BRANCH}" == "" ]; then
+		if is_ssh_fs_path; then
+			echo " [${BRANCH} ]"
+		else
+			STAT=`parse_git_dirty`
+			echo " [${BRANCH}${STAT}]"
+		fi
 	else
 		echo ""
 	fi
@@ -56,6 +59,22 @@ function parse_git_dirty {
 		echo ""
 	fi
 }
+
+function is_ssh_fs_path() {
+	# TODO handle case if there are multiple sshfs paths
+	sshfs_path=$(mount -t fuse.sshfs | sed -e 's/.* on \(.*\) type .*/\1/');
+	curr_path=$(pwd);
+	if [ -z "$sshfs_path" ]; then
+		return 1;
+	fi
+	if [[ $curr_path == $sshfs_path* ]]; then
+		return 0;
+	else
+		return 1;
+	fi
+}
+
+export TERM="screen-256color"
 
 # set prompt text
 export PS1="\[\e[92m\]\u@\h\[\e[m\]:\[\e[36m\]\w\[\e[m\]\[\e[31m\]\`parse_git_branch\`\[\e[m\]\\$ "
