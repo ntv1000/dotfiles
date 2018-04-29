@@ -45,7 +45,20 @@ set scrolloff=9999
 " search while typing
 set incsearch
 " for easier jump to mark
-map ´ `
+nmap ´ `
+" auto-complete with tab
+function! Tab_Or_Complete()
+  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+    return "\<C-N>"
+  else
+    return "\<Tab>"
+  endif
+endfunction
+imap <Tab> <C-R>=Tab_Or_Complete()<CR>
+imap <S-Tab> <C-P>
+" switch tabs easier
+nmap <C-L> gt
+nmap <C-H> gT
 " auto indent by analysing filetype
 filetype on
 filetype indent plugin on
