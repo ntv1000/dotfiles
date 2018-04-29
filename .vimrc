@@ -8,6 +8,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'bitc/vim-bad-whitespace'
+Plug 'Shougo/denite.nvim'
 
 call plug#end()
 
@@ -17,6 +18,35 @@ colorscheme molokai
 "autocmd ColorScheme * highlight search ctermbg=2 ctermfg=0
 " set visual visual selection color
 autocmd ColorScheme * highlight Visual ctermbg=240
+
+" configure denite
+" narrow by path in grep source
+call denite#custom#source('grep', 'converters', ['converter/abbr_word'])
+" use ripgrep in grep source
+call denite#custom#var('grep', 'command', ['rg'])
+call denite#custom#var('grep', 'default_opts', ['--vimgrep', '--no-heading', '-u', '-i'])
+call denite#custom#var('grep', 'recursive_opts', [])
+call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
+call denite#custom#var('grep', 'separator', ['--'])
+call denite#custom#var('grep', 'final_opts', [])
+" use interactive mode in grep source
+"call denite#custom#source('grep', 'args', ['', '', '!'])
+
+nmap <leader>d :Denite file/rec -default-action=tabswitch<CR>
+nmap <leader>f :Denite grep -mode=normal -default-action=tabswitch<CR>
+nmap <leader>c :DeniteCursorWord grep -mode=normal -default-action=tabswitch<CR>
+call denite#custom#map(
+	\ 'insert',
+	\ '<C-j>',
+	\ '<denite:move_to_next_line>',
+	\ 'noremap'
+	\)
+call denite#custom#map(
+	\ 'insert',
+	\ '<C-k>',
+	\ '<denite:move_to_previous_line>',
+	\ 'noremap'
+	\)
 
 " airline configuration
 let g:airline_powerline_fonts = 1
