@@ -76,6 +76,13 @@ function is_ssh_fs_path() {
 
 export TERM="screen-256color"
 
+# avoid duplicates..
+export HISTCONTROL=ignoredups:erasedups
+# append history entries..
+shopt -s histappend
+# After each command, save and reload history
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
 # set prompt text
 export PS1="\[\e[92m\]\u@\h\[\e[m\]:\[\e[36m\]\w\[\e[m\]\[\e[31m\]\`parse_git_branch\`\[\e[m\]\\$ "
 
