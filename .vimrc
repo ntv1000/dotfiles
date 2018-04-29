@@ -6,6 +6,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'bitc/vim-bad-whitespace'
 
 call plug#end()
@@ -20,6 +21,9 @@ autocmd ColorScheme * highlight Visual ctermbg=240
 " airline configuration
 let g:airline_powerline_fonts = 1
 let g:airline_theme='molokai'
+
+" enable deoplete on start-up
+let g:deoplete#enable_at_startup = 1
 
 " git gutter configuration
 set signcolumn=yes
