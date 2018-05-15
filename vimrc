@@ -9,6 +9,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'bitc/vim-bad-whitespace'
 Plug 'Shougo/denite.nvim'
+Plug 'lervag/vimtex'
+
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
@@ -56,6 +59,14 @@ let g:airline_theme='molokai'
 
 " enable deoplete on start-up
 let g:deoplete#enable_at_startup = 1
+
+" enable vimtex
+let g:vimtex_enabled = 1
+let g:vimtex_complete_enabled = 1
+if !exists('g:deoplete#omni#input_patterns')
+	let g:deoplete#omni#input_patterns = {}
+endif
+let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
 
 " git gutter configuration
 set signcolumn=yes
