@@ -48,6 +48,8 @@ call denite#custom#map(
 	\ 'noremap'
 	\)
 
+command TODO :Denite grep -mode=normal -auto-preview=true -default-action=tabswitch -input=TODO
+
 " airline configuration
 let g:airline_powerline_fonts = 1
 let g:airline_theme='molokai'
