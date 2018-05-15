@@ -89,6 +89,8 @@ set scrolloff=9999
 set incsearch
 " for easier jump to mark
 nmap ´ `
+" for easier compilation
+nmap <leader>m :make<CR>
 " auto-complete with tab
 function! Tab_Or_Complete()
   if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
