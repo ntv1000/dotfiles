@@ -29,7 +29,7 @@ autocmd ColorScheme * highlight Visual ctermbg=240
 call denite#custom#source('grep', 'converters', ['converter/abbr_word'])
 " use ripgrep in grep source
 call denite#custom#var('grep', 'command', ['rg'])
-call denite#custom#var('grep', 'default_opts', ['--vimgrep', '--no-heading', '-u', '-i'])
+call denite#custom#var('grep', 'default_opts', ['--vimgrep', '--no-heading', '-uu', '--smart-case'])
 call denite#custom#var('grep', 'recursive_opts', [])
 call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
 call denite#custom#var('grep', 'separator', ['--'])
