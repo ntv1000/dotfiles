@@ -90,6 +90,8 @@ nmap <F8> :TagbarToggle<CR>
 set signcolumn=yes
 set updatetime=100
 
+command Gc :Gcommit -v
+
 " set internal encoding to UTF-8
 set encoding=utf-8
 " show line number
