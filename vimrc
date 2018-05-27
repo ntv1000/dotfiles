@@ -98,6 +98,32 @@ set updatetime=100
 
 command Gc :Gcommit -v
 
+" signature configuration
+let g:SignatureForceRemoveGlobal = 1
+let g:SignatureMap = {
+	\ 'Leader'             :  "m",
+	\ 'PlaceNextMark'      :  "m,",
+	\ 'ToggleMarkAtLine'   :  "m.",
+	\ 'PurgeMarksAtLine'   :  "m-",
+	\ 'DeleteMark'         :  "dm",
+	\ 'PurgeMarks'         :  "m<Space>",
+	\ 'PurgeMarkers'       :  "m<BS>",
+	\ 'GotoNextLineAlpha'  :  "']",
+	\ 'GotoPrevLineAlpha'  :  "'[",
+	\ 'GotoNextSpotAlpha'  :  "mn",
+	\ 'GotoPrevSpotAlpha'  :  "mN",
+	\ 'GotoNextLineByPos'  :  "]'",
+	\ 'GotoPrevLineByPos'  :  "['",
+	\ 'GotoNextSpotByPos'  :  "]`",
+	\ 'GotoPrevSpotByPos'  :  "[`",
+	\ 'GotoNextMarker'     :  "]-",
+	\ 'GotoPrevMarker'     :  "[-",
+	\ 'GotoNextMarkerAny'  :  "]=",
+	\ 'GotoPrevMarkerAny'  :  "[=",
+	\ 'ListBufferMarks'    :  "m/",
+	\ 'ListBufferMarkers'  :  "m?"
+	\ }
+
 " tagbar configuration
 let g:tagbar_autoclose = 1
 let g:tagbar_autofocus = 1
