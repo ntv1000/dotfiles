@@ -11,6 +11,7 @@ Plug 'bitc/vim-bad-whitespace'
 Plug 'Shougo/denite.nvim'
 Plug 'lervag/vimtex'
 Plug 'majutsushi/tagbar'
+Plug 'kshenoy/vim-signature'
 Plug 'scrooloose/nerdcommenter'
 
 Plug 'joshdick/onedark.vim'
