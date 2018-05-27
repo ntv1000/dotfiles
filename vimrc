@@ -93,6 +93,11 @@ set updatetime=100
 
 command Gc :Gcommit -v
 
+" tagbar configuration
+let g:tagbar_autoclose = 1
+let g:tagbar_autofocus = 1
+let g:tagbar_sort = 0
+
 " set internal encoding to UTF-8
 set encoding=utf-8
 " show line number
