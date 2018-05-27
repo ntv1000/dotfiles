@@ -37,8 +37,8 @@ call denite#custom#var('grep', 'final_opts', [])
 " use interactive mode in grep source
 "call denite#custom#source('grep', 'args', ['', '', '!'])
 
-nmap <leader>d :Denite file/rec -default-action=switch -smartcase -immediately-1<CR>
-nmap <leader>f :Denite grep -no-empty -mode=normal -default-action=switch -smartcase -immediately-1<CR>
+nmap <leader>f :Denite file/rec -default-action=switch -smartcase -immediately-1<CR>
+nmap <leader>g :Denite grep -no-empty -mode=normal -default-action=switch -smartcase -immediately-1<CR>
 nmap <leader>c :DeniteCursorWord grep -no-empty -mode=normal -default-action=switch -smartcase -immediately-1<CR>
 nmap <leader>t :DeniteCursorWord tag -no-empty -mode=normal -default-action=switch -smartcase -immediately-1<CR>
 
@@ -68,8 +68,8 @@ let g:NERDDefaultAlign = 'start'
 " Allow commenting and inverting empty lines (useful when commenting a region)
 let g:NERDCommentEmptyLines = 1
 "map <leader>cc <plug>NERDCommenterToggle
-map <leader>g <plug>NERDCommenterComment
-map <leader>G <plug>NERDCommenterUncomment
+map <leader>d <plug>NERDCommenterComment
+map <leader>D <plug>NERDCommenterUncomment
 
 " airline configuration
 let g:airline_theme='molokai'
