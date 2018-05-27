@@ -10,6 +10,8 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'bitc/vim-bad-whitespace'
 Plug 'Shougo/denite.nvim'
 Plug 'lervag/vimtex'
+Plug 'majutsushi/tagbar'
+Plug 'scrooloose/nerdcommenter'
 
 Plug 'joshdick/onedark.vim'
 
@@ -53,6 +55,20 @@ call denite#custom#map(
 
 command TODO :Denite grep -mode=normal -auto-preview=true -default-action=tabswitch -input=TODO
 
+" nerdcomment configuration
+let g:NERDCreateDefaultMappings = 0
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'start'
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+"map <leader>cc <plug>NERDCommenterToggle
+map <leader>g <plug>NERDCommenterComment
+map <leader>G <plug>NERDCommenterUncomment
+
 " airline configuration
 let g:airline_powerline_fonts = 1
 let g:airline_theme='molokai'
@@ -67,6 +83,8 @@ if !exists('g:deoplete#omni#input_patterns')
 	let g:deoplete#omni#input_patterns = {}
 endif
 let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
+
+nmap <F8> :TagbarToggle<CR>
 
 " git gutter configuration
 set signcolumn=yes
