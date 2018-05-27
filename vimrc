@@ -71,8 +71,8 @@ map <leader>g <plug>NERDCommenterComment
 map <leader>G <plug>NERDCommenterUncomment
 
 " airline configuration
-let g:airline_powerline_fonts = 1
 let g:airline_theme='molokai'
+let g:airline#extensions#tabline#enabled = 1
 
 " enable deoplete on start-up
 let g:deoplete#enable_at_startup = 1
@@ -128,9 +128,9 @@ function! Tab_Or_Complete()
 endfunction
 imap <Tab> <C-R>=Tab_Or_Complete()<CR>
 imap <S-Tab> <C-P>
-" switch tabs easier
-nmap <C-L> gt
-nmap <C-H> gT
+" switch buffers easier
+nmap <C-L> :bnext<CR>
+nmap <C-H> :bprevious<CR>
 " auto indent by analysing filetype
 filetype on
 filetype indent plugin on
