@@ -131,6 +131,7 @@ imap <S-Tab> <C-P>
 " switch buffers easier
 nmap <C-L> :bnext<CR>
 nmap <C-H> :bprevious<CR>
+nmap <leader>x :bdelete<CR>
 " auto indent by analysing filetype
 filetype on
 filetype indent plugin on
