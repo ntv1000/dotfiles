@@ -143,5 +143,5 @@ syntax on
 " disable auto-comment-insertion (add "cr" to disable it completely)
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 set foldmethod=manual
-"map <leader>td <Plug>TaskList
-"map <leader>g :GundoToggle<CR>
+
+set cursorline
