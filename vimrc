@@ -80,7 +80,7 @@ set number
 set tabstop=4
 set shiftwidth=4
 " make searches case INsensitive
-set ignorecase
+set smartcase
 " highlight search results
 set hlsearch
 " keep cursor in the middle
