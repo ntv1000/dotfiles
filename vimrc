@@ -164,6 +164,19 @@ imap <S-Tab> <C-P>
 nmap <C-L> :bnext<CR>
 nmap <C-H> :bprevious<CR>
 nmap <leader>x :bdelete<CR>
+" easiert window switchting
+function! Close_If_Not_Last_Window()
+	if (winnr("$") > 1)
+		quit
+	else
+		echo "last window - not closing"
+	endif
+endfunction
+nmap <Esc> :call Close_If_Not_Last_Window()<CR>
+nmap <Left> :wincmd h<CR>
+nmap <Right> :wincmd l<CR>
+nmap <Up> :wincmd k<CR>
+nmap <Down> :wincmd j<CR>
 " auto indent by analysing filetype
 filetype on
 filetype indent plugin on
