@@ -97,7 +97,11 @@ nmap <F8> :TagbarToggle<CR>
 set signcolumn=yes
 set updatetime=100
 
-command Gc :Gcommit -v
+function! CommitShort()
+	:BuffergatorClose
+	:Gcommit -v
+endfunction
+command Gc :call CommitShort()
 
 " signature configuration
 let g:SignatureForceRemoveGlobal = 1
