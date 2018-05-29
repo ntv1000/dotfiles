@@ -10,6 +10,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'bitc/vim-bad-whitespace'
 Plug 'Shougo/denite.nvim'
 Plug 'lervag/vimtex'
+Plug 'jeetsukumaran/vim-buffergator'
 Plug 'majutsushi/tagbar'
 Plug 'w0rp/ale'
 Plug 'kshenoy/vim-signature'
@@ -78,7 +79,6 @@ let g:airline_theme='molokai'
 let g:airline_section_b ='' " disable git section
 let g:airline_section_error = '' " disable error section
 let g:airline_section_warning = '' " disable warning section
-let g:airline#extensions#tabline#enabled = 1
 
 " enable deoplete on start-up
 let g:deoplete#enable_at_startup = 1
@@ -124,6 +124,20 @@ let g:SignatureMap = {
 	\ 'ListBufferMarks'    :  "m/",
 	\ 'ListBufferMarkers'  :  "m?"
 	\ }
+
+" buffergator configuration
+autocmd vimenter * BuffergatorOpen " automatically open buffergator on startup
+autocmd bufenter * if (winnr("$") == 1 && bufname("[[buffergator-buffers]]") == "[[buffergator-buffers]]") | q | endif " automatically close buffergator if it is the last remaining window
+let g:buffergator_viewport_split_policy = "R"
+let g:buffergator_autodismiss_on_select = 0
+let g:buffergator_autoupdate = 1
+let g:buffergator_vsplit_size = 30
+let g:buffergator_sort_regime = "bufnum"
+let g:buffergator_display_regime = "bufname"
+
+nmap <C-j> :bnext<CR>
+nmap <C-k> :bprev<CR>
+nmap # :e #<CR>
 
 " tagbar configuration
 let g:tagbar_autoclose = 1
