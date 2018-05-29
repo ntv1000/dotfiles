@@ -126,8 +126,12 @@ let g:SignatureMap = {
 	\ }
 
 " buffergator configuration
+function! BuffergatorIsOpen()
+	return bufname("[[buffergator-buffers]]") == "[[buffergator-buffers]]"
+endfunction
+
 autocmd vimenter * BuffergatorOpen " automatically open buffergator on startup
-autocmd bufenter * if (winnr("$") == 1 && bufname("[[buffergator-buffers]]") == "[[buffergator-buffers]]") | q | endif " automatically close buffergator if it is the last remaining window
+autocmd bufenter * if (winnr("$") == 1 && BuffergatorIsOpen()) | q | endif " automatically close buffergator if it is the last remaining window
 let g:buffergator_viewport_split_policy = "R"
 let g:buffergator_autodismiss_on_select = 0
 let g:buffergator_autoupdate = 1
@@ -179,18 +183,18 @@ nmap <C-L> :bnext<CR>
 nmap <C-H> :bprevious<CR>
 nmap <leader>x :bdelete<CR>
 " easiert window switchting
-function! Close_If_Not_Last_Window()
-	if (winnr("$") > 1)
-		quit
-	else
+function! CloseIfNotLastWindow()
+	if (winnr("$") == 1 || (winnr("$") == 2 && BuffergatorIsOpen()))
 		echo "last window - not closing"
+	else
+		quit
 	endif
 endfunction
-nmap <Esc> :call Close_If_Not_Last_Window()<CR>
-nmap <Left> :wincmd h<CR>
-nmap <Right> :wincmd l<CR>
-nmap <Up> :wincmd k<CR>
-nmap <Down> :wincmd j<CR>
+nmap <Esc> :call CloseIfNotLastWindow()<CR>
+nmap <M-h> :wincmd h<CR>
+nmap <M-l> :wincmd l<CR>
+nmap <M-k> :wincmd k<CR>
+nmap <M-j> :wincmd j<CR>
 " auto indent by analysing filetype
 filetype on
 filetype indent plugin on
