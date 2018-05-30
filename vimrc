@@ -143,8 +143,12 @@ function! BuffergatorIsOpen()
 	return bufname("[[buffergator-buffers]]") == "[[buffergator-buffers]]"
 endfunction
 
+function! BuffergatorIsActive()
+	return bufname("%") == "[[buffergator-buffers]]"
+endfunction
+
 autocmd vimenter * BuffergatorOpen " automatically open buffergator on startup
-autocmd vimenter * wincmd p
+autocmd vimenter * if (BuffergatorIsActive()) | wincmd p | endif " unfocus buffergator window if it is focused at startup
 autocmd bufenter * if (winnr("$") == 1 && BuffergatorIsOpen()) | q | endif " automatically close buffergator if it is the last remaining window
 let g:buffergator_suppress_keymaps = 1
 let g:buffergator_viewport_split_policy = "R"
