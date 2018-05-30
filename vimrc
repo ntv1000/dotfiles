@@ -135,13 +135,16 @@ function! BuffergatorIsOpen()
 endfunction
 
 autocmd vimenter * BuffergatorOpen " automatically open buffergator on startup
+autocmd vimenter * wincmd p
 autocmd bufenter * if (winnr("$") == 1 && BuffergatorIsOpen()) | q | endif " automatically close buffergator if it is the last remaining window
+let g:buffergator_suppress_keymaps = 1
 let g:buffergator_viewport_split_policy = "R"
 let g:buffergator_autodismiss_on_select = 0
 let g:buffergator_autoupdate = 1
 let g:buffergator_vsplit_size = 30
 let g:buffergator_sort_regime = "bufnum"
 let g:buffergator_display_regime = "bufname"
+nmap <leader>b :BuffergatorToggle<CR>
 
 nmap <C-j> :bnext<CR>
 nmap <C-k> :bprev<CR>
