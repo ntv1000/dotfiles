@@ -38,3 +38,4 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 alias vim='nvim -u ~/.vimrc'
 alias la='ls -la'
+alias vimmin="nvim -u NONE"
