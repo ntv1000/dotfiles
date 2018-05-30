@@ -199,8 +199,12 @@ nmap <M-h> :wincmd h<CR>
 nmap <M-l> :wincmd l<CR>
 nmap <M-k> :wincmd k<CR>
 nmap <M-j> :wincmd j<CR>
-" shotcut to reload all buffers
-nmap <leader>r :bufdo e<CR><CR>
+" shortcut to reload all buffers
+function! ReloadBuffers()
+	:bufdo e
+	:syntax on
+endfunction
+nmap <F5> :call ReloadBuffers()<CR>
 " auto indent by analysing filetype
 filetype on
 filetype indent plugin on
