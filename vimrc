@@ -40,10 +40,10 @@ call denite#custom#var('grep', 'final_opts', [])
 " use interactive mode in grep source
 "call denite#custom#source('grep', 'args', ['', '', '!'])
 
-nmap <leader>f :Denite file/rec -default-action=switch -smartcase -immediately-1<CR>
-nmap <leader>g :Denite grep -no-empty -mode=normal -default-action=switch -smartcase -immediately-1<CR>
-nmap <leader>c :DeniteCursorWord grep -no-empty -mode=normal -default-action=switch -smartcase -immediately-1<CR>
-nmap <leader>t :DeniteCursorWord tag -no-empty -mode=normal -default-action=switch -smartcase -immediately-1<CR>
+nmap <leader>f :Denite file/rec -smartcase -immediately-1<CR>
+nmap <leader>g :Denite grep -no-empty -mode=normal -smartcase -immediately-1<CR>
+nmap <leader>c :DeniteCursorWord grep -no-empty -mode=normal -smartcase -immediately-1<CR>
+nmap <leader>t :DeniteCursorWord tag -no-empty -mode=normal -smartcase -immediately-1<CR>
 
 call denite#custom#map(
 	\ 'insert',
