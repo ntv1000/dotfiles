@@ -109,6 +109,7 @@ function! CommitShort()
 	:Gcommit -v
 endfunction
 command Gc :call CommitShort()
+command Gadd :silent exec "!git add %"
 
 " signature configuration
 let g:SignatureForceRemoveGlobal = 1
