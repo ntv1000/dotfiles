@@ -108,8 +108,9 @@ function! CommitShort()
 	:BuffergatorClose
 	:Gcommit -v
 endfunction
-command Gc :call CommitShort()
-command Gadd :silent exec "!git add %"
+command Gc call CommitShort()
+command Gadd silent exec "!git add %"
+command Greset silent exec "!git reset"
 
 " signature configuration
 let g:SignatureForceRemoveGlobal = 1
