@@ -91,7 +91,14 @@ if !exists('g:deoplete#omni#input_patterns')
 endif
 let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
 
-nmap <F8> :TagbarToggle<CR>
+
+function! ToggleTagbar()
+	:BuffergatorClose
+	:TagbarToggle
+	:BuffergatorOpen
+	:wincmd p
+endfunction
+nmap <F8> :call ToggleTagbar()<CR>
 
 " git gutter configuration
 set signcolumn=yes
