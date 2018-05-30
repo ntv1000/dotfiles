@@ -104,11 +104,7 @@ nmap <F8> :call ToggleTagbar()<CR>
 set signcolumn=yes
 set updatetime=100
 
-function! CommitShort()
-	:BuffergatorClose
-	:Gcommit -v
-endfunction
-command Gc call CommitShort()
+command Gc :Gcommit --verbose
 command Gadd silent exec "!git add %"
 command Greset silent exec "!git reset"
 
