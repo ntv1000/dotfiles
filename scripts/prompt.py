@@ -104,8 +104,9 @@ if len(gen(prompt)) > max_prompt_width:
     # First few chars and last few chars separated by `separator`
     pwd = pwd[:head_length]+"..."+pwd[-tail_length:]
 
-    # Update dictionary as the reference to pwd changed
+    # Update dictionaries as the reference to pwd changed
     fields["pwd"] = color(pwd, blue)
+    colored_fields["pwd"] = color(pwd, blue)
 
     # Prompt string can be left unchanged
 
