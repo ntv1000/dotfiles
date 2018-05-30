@@ -167,6 +167,8 @@ nmap <Space> :silent exec "! aplay ~/dotfiles/laser.wav > /tmp/output 2>&1 &"<CR
 xnoremap <Tab> >
 xnoremap <S-Tab> <
 
+nnoremap <leader>+ :nohlsearch<CR>
+
 " tagbar configuration
 let g:tagbar_autoclose = 1
 let g:tagbar_autofocus = 1
