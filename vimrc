@@ -156,6 +156,7 @@ nmap <leader>b :BuffergatorToggle<CR>
 nmap <C-j> :bnext<CR>
 nmap <C-k> :bprev<CR>
 nmap # :e #<CR>
+nmap <Space> :silent exec "! aplay ~/dotfiles/laser.wav > /tmp/output 2>&1 &"<CR>
 
 " tagbar configuration
 let g:tagbar_autoclose = 1
