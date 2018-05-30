@@ -185,7 +185,16 @@ imap <S-Tab> <C-P>
 " switch buffers easier
 nmap <C-L> :bnext<CR>
 nmap <C-H> :bprevious<CR>
-nmap <leader>x :bdelete<CR>
+
+function! CloseBuffer()
+	:BuffergatorClose
+	:bdelete
+	:BuffergatorOpen
+	:wincmd p
+endfunction
+nmap <Backspace> :call CloseBuffer()<CR>
+nmap <CR> :w<CR>
+nmap <M-CR> :wq<CR> " not working
 " easiert window switchting
 function! CloseIfNotLastWindow()
 	if (winnr("$") == 1 || (winnr("$") == 2 && BuffergatorIsOpen()))
