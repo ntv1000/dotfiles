@@ -245,6 +245,8 @@ function! ReloadBuffers()
 	:syntax on
 endfunction
 nmap <F5> :call ReloadBuffers()<CR>
+" shortcut to relead vimrc
+nmap <leader>r :source $MYVIMRC<CR>
 " auto indent by analysing filetype
 filetype on
 filetype indent plugin on
