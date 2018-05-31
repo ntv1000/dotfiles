@@ -105,7 +105,7 @@ nmap <F8> :call ToggleTagbar()<CR>
 set signcolumn=yes
 set updatetime=100
 
-command Gc :Gcommit --verbose
+command -nargs=* Gc :Gcommit --verbose <args>
 command Gadd silent exec "!git add %"
 command Greset silent exec "!git reset"
 
