@@ -77,6 +77,7 @@ map <leader>D <plug>NERDCommenterUncomment
 
 " airline configuration
 let g:airline_theme='molokai'
+let g:airline_section_z ='%l:%c  %p%%'
 let g:airline_section_b ='' " disable git section
 let g:airline_section_error = '' " disable error section
 let g:airline_section_warning = '' " disable warning section
