@@ -15,6 +15,7 @@ Plug 'majutsushi/tagbar'
 Plug 'w0rp/ale'
 Plug 'kshenoy/vim-signature'
 Plug 'scrooloose/nerdcommenter'
+Plug 'vim-scripts/git-time-lapse'
 
 Plug 'joshdick/onedark.vim'
 
@@ -165,6 +166,16 @@ xnoremap <S-Tab> <
 
 nnoremap <leader>+ :nohlsearch<CR>
 
+function! OpenTimeLapse()
+	:BuffergatorClose
+	:call TimeLapse()
+	:tabprevious
+	:BuffergatorOpen
+	:wincmd p
+	:tabnext
+endfunction
+command Ghist :call OpenTimeLapse()
+
 " tagbar configuration
 let g:tagbar_autoclose = 1
 let g:tagbar_autofocus = 1
@@ -211,8 +222,9 @@ function! CloseBuffer()
 	:wincmd p
 endfunction
 nmap <Backspace> :call CloseBuffer()<CR>
+nmap <M-Backspace> :tabclose<CR>
 nmap <CR> :w<CR>
-nmap <M-CR> :wq<CR> " not working
+nmap <M-CR> :wq<CR>
 " easiert window switchting
 function! CloseIfNotLastWindow()
 	if (winnr("$") == 1 || (winnr("$") == 2 && BuffergatorIsOpen()))
