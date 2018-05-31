@@ -163,7 +163,7 @@ nmap <Space> :silent exec "! aplay ~/dotfiles/laser.wav > /tmp/output 2>&1 &"<CR
 xnoremap <Tab> >
 xnoremap <S-Tab> <
 
-nnoremap <leader>+ :nohlsearch<CR>
+nnoremap <C-M-O> :nohlsearch<CR>
 imap <M-CR> <Esc>:wq<CR>
 
 function! OpenTimeLapse()
