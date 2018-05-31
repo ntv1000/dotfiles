@@ -16,6 +16,7 @@ Plug 'w0rp/ale'
 Plug 'kshenoy/vim-signature'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-scripts/git-time-lapse'
+Plug 'rust-lang/rust.vim'
 
 Plug 'joshdick/onedark.vim'
 
