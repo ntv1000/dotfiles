@@ -36,6 +36,6 @@ shopt -s histappend
 # After each command, save and reload history
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
-alias vim='nvim -u ~/.vimrc'
+alias vim='MYVIMRC="$HOME/.vimrc" nvim -u $HOME/.vimrc'
 alias la='ls -la'
 alias vimmin="nvim -u NONE"
