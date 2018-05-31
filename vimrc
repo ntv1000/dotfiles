@@ -202,6 +202,14 @@ set incsearch
 nmap ´ `
 " for easier compilation
 nmap <leader>m :make<CR>
+
+function! OpenSplitTerm(cmd)
+	belowright split
+	resize 15
+	execute "terminal bash -c \"" . a:cmd . " ; bash\""
+endfunction
+nmap <leader>x :call OpenSplitTerm("cargo run")<CR>
+tnoremap <Esc> <C-\><C-n>
 " auto-complete with tab
 function! Tab_Or_Complete()
 	if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
