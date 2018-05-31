@@ -59,7 +59,7 @@ call denite#custom#map(
 	\ 'noremap'
 	\)
 
-command TODO :Denite grep -mode=normal -auto-preview=true -default-action=switch -input=TODO
+command! TODO :Denite grep -mode=normal -auto-preview=true -default-action=switch -input=TODO
 
 " nerdcomment configuration
 let g:NERDCreateDefaultMappings = 0
@@ -106,9 +106,9 @@ nmap <F8> :call ToggleTagbar()<CR>
 set signcolumn=yes
 set updatetime=100
 
-command -nargs=* Gc :Gcommit --verbose <args>
-command Gadd silent exec "!git add %"
-command Greset silent exec "!git reset"
+command! -nargs=* Gc :Gcommit --verbose <args>
+command! Gadd silent exec "!git add %"
+command! Greset silent exec "!git reset"
 
 " signature configuration
 let g:SignatureForceRemoveGlobal = 1
@@ -175,7 +175,7 @@ function! OpenTimeLapse()
 	:wincmd p
 	:tabnext
 endfunction
-command Ghist :call OpenTimeLapse()
+command! Ghist :call OpenTimeLapse()
 
 " tagbar configuration
 let g:tagbar_autoclose = 1
