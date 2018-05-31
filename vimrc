@@ -41,10 +41,10 @@ call denite#custom#var('grep', 'final_opts', [])
 " use interactive mode in grep source
 "call denite#custom#source('grep', 'args', ['', '', '!'])
 
-nmap <leader>f :Denite file/rec -smartcase -immediately-1<CR>
-nmap <leader>g :Denite grep -no-empty -mode=normal -smartcase -immediately-1<CR>
-nmap <M-*> :DeniteCursorWord grep -no-empty -mode=normal -smartcase -immediately-1<CR>
-nmap <leader>t :DeniteCursorWord tag -no-empty -mode=normal -smartcase -immediately-1<CR>
+nmap <leader>f :w<CR>:Denite file/rec -smartcase -immediately-1<CR>
+nmap <leader>g :w<CR>:Denite grep -no-empty -mode=normal -smartcase -immediately-1<CR>
+nmap <M-*> :w<CR>:DeniteCursorWord grep -no-empty -mode=normal -smartcase -immediately-1<CR>
+nmap <leader>t :w<CR>:DeniteCursorWord tag -no-empty -mode=normal -smartcase -immediately-1<CR>
 
 call denite#custom#map(
 	\ 'insert',
@@ -59,7 +59,7 @@ call denite#custom#map(
 	\ 'noremap'
 	\)
 
-command! TODO :Denite grep -mode=normal -auto-preview=true -default-action=switch -input=TODO
+command! TODO :w | Denite grep -mode=normal -auto-preview=true -default-action=switch -input=TODO
 
 " nerdcomment configuration
 let g:NERDCreateDefaultMappings = 0
