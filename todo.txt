@@ -1,0 +1,14 @@
+TODO integrate clipboards of vim/tmux/kde
+TODO use snippet plugin
+TODO Multicursor plugin
+TODO alias to open environment for project
+TODO change all maps to nore
+TODO better file structure: separate .bash_aliases file, multiple vim configs, install scripts like prompt.py with dotbot as well
+TODO buffergator try to remove status line
+TODO close buffergator if below a certain terminal size
+TODO add alias for git diff --no-index
+
+TODO fix error in docs:
+let g:bufExplorerSplitVertSize=n          " New split window is n columns wide.
+should be:
+let g:bufExplorerSplitVertSize=n          " New split window is n columns wide.
