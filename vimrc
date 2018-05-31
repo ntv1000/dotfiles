@@ -202,11 +202,11 @@ nmap ´ `
 nmap <leader>m :make<CR>
 " auto-complete with tab
 function! Tab_Or_Complete()
-  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
-    return "\<C-N>"
-  else
-    return "\<Tab>"
-  endif
+	if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+		return "\<C-N>"
+	else
+		return "\<Tab>"
+	endif
 endfunction
 imap <Tab> <C-R>=Tab_Or_Complete()<CR>
 imap <S-Tab> <C-P>
