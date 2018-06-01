@@ -39,3 +39,4 @@ export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 alias vim='MYVIMRC="$HOME/.vimrc" nvim -u $HOME/.vimrc'
 alias la='ls -la'
 alias vimmin="nvim -u NONE"
+alias diff="git diff --no-index"
