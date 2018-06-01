@@ -60,6 +60,9 @@ xnoremap <Tab> >
 xnoremap <S-Tab> <
 
 
+" Insert blank line
+nnoremap <C-O> o<Esc>
+
 " Disable search highlightings
 nnoremap <C-M-O> :nohlsearch<CR>
 
