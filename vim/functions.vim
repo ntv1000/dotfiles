@@ -34,7 +34,7 @@ function! OpenSplitTerm(cmd)
 endfunction
 
 " Insert a tab or start auto-completion depending on the preceding character
-function! Tab_Or_Complete()
+function! TabOrComplete()
 	if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
 		return "\<C-N>"
 	else

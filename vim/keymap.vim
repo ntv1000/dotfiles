@@ -77,7 +77,7 @@ nnoremap <leader>x :call OpenSplitTerm("cargo run")<CR>
 
 
 " Start tab-completion and next item on the completion list
-inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+inoremap <Tab> <C-R>=TabOrComplete()<CR>
 " Previous item on the completion list
 inoremap <S-Tab> <C-P>
 
