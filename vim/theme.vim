@@ -1,6 +1,8 @@
-" themeing
+" Set theme
 colorscheme molokai
-" set search highlight color to green
+
+" Set search highlight color to green
 "autocmd ColorScheme * highlight search ctermbg=2 ctermfg=0
-" set visual visual selection color
+
+" Set visual selection color
 autocmd ColorScheme * highlight Visual ctermbg=240

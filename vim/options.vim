@@ -1,31 +1,43 @@
+" Define <leader>-key
 let mapleader = ","
-" git gutter configuration
-set signcolumn=yes
-set updatetime=100
 
-" set internal encoding to UTF-8
+" Set internal encoding to UTF-8
 set encoding=utf-8
-" show line number
+
+" Show line numbers
 set number
-" set tab width
+
+" Set tab width to 4
 set tabstop=4
 set shiftwidth=4
-" make searches case INsensitive
+
+" Make searches case INsensitive with smartcase
 set ignorecase
 set smartcase
-" highlight search results
+
+" Highlight search results
 set hlsearch
-" keep cursor in the middle
-set scrolloff=9999
-" search while typing
+" Search while typing
 set incsearch
 
-" auto indent by analysing filetype
-filetype on
-filetype indent plugin on
-" syntax highlightning
+" Keep cursor in the middle of the screen
+set scrolloff=9999
+
+" Auto indent by analysing filetype
+filetype plugin indent on
+
+" Syntax highlightning
 syntax on
+
+" Enable manual folding
 set foldmethod=manual
 
+" Show cursorline
 set cursorline
+
+" Don't unload buffers when they become unactive
 set hidden
+
+" Mainly for gitgutter
+set signcolumn=yes
+set updatetime=100
