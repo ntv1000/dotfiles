@@ -187,3 +187,10 @@ let g:tagbar_autofocus = 1
 
 " Use order in file
 let g:tagbar_sort = 0
+
+"""""""""
+" Mundo "
+"""""""""
+
+" Close mundo when selecting a graph node
+let g:mundo_close_on_revert = 1
