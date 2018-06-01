@@ -3,7 +3,7 @@ command! TODO :w | Denite grep -mode=normal -auto-preview=true -default-action=s
 
 
 " Fugitive commit and show diff in commit buffer
-command! -nargs=* Gc :exec "Gcommit --verbose " . <q-args> | resize 40
+command! -nargs=* Gc :exec "Gcommit --verbose " . <q-args> | resize 40 | startinsert
 
 " Reset git index
 command! Greset silent exec "!git reset"
