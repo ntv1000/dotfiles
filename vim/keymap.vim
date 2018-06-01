@@ -99,6 +99,9 @@ nnoremap <F8> :call ToggleTagbar()<CR>
 " Toggle buffergator
 nnoremap <leader>b :BuffergatorToggle<CR>
 
+" Toggle English spellcheck
+noremap <leader>s :setlocal spell! spelllang=en_us<CR>
+
 
 " Reload all buffers
 nnoremap <F5> :call ReloadBuffers()<CR>
