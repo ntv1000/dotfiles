@@ -51,11 +51,17 @@ function! CloseBuffer()
 endfunction
 
 " Close window if it it not the last window remaining, excluding buffergator
-function! CloseIfNotLastWindow()
+" Also sends 'q' as a keypress instead of a command (':q') if it is in a window where a 'q' key press quits all associated windows. (e.g. Mundo)
+function! MagicWindowClose()
 	if (winnr("$") == 1 || (winnr("$") == 2 && BuffergatorIsOpen()))
 		echo "last window - not closing"
 	else
-		quit
+		let currBufName = bufname("%")
+		if (currBufName == "__Mundo__" || currBufName == "__Mundo_Preview__" || currBufName == "[[buffergator-buffers]]")
+			normal q
+		else
+			quit
+		endif
 	endif
 endfunction
 

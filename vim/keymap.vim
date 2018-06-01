@@ -30,7 +30,7 @@ nnoremap <Backspace> :call CloseBuffer()<CR>
 " Close currently active tab
 nnoremap <M-Backspace> :tabclose<CR>
 " Close currently active window
-nnoremap <Esc> :call CloseIfNotLastWindow()<CR>
+nnoremap <Esc> :call MagicWindowClose()<CR>
 
 " Activate window on the left
 nnoremap <M-h> :wincmd h<CR>
@@ -102,6 +102,9 @@ nnoremap <F8> :call ToggleTagbar()<CR>
 
 " Toggle buffergator
 nnoremap <leader>b :BuffergatorToggle<CR>
+
+" Toggle mundo
+nnoremap <leader>u :MundoToggle<CR>
 
 " Toggle English spellcheck
 noremap <leader>s :setlocal spell! spelllang=en_us<CR>
