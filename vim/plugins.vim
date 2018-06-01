@@ -13,6 +13,8 @@ Plug 'jeetsukumaran/vim-buffergator'
 Plug 'kshenoy/vim-signature'
 Plug 'scrooloose/nerdcommenter'
 Plug 'simnalamburt/vim-mundo'
+Plug 'easymotion/vim-easymotion'
+Plug 'terryma/vim-multiple-cursors'
 
 Plug 'w0rp/ale'
 Plug 'rust-lang/rust.vim'
