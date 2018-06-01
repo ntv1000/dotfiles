@@ -166,6 +166,7 @@ xnoremap <S-Tab> <
 
 nnoremap <C-M-O> :nohlsearch<CR>
 imap <M-CR> <Esc>:wq<CR>
+nnoremap x "_x
 
 function! OpenTimeLapse()
 	:BuffergatorClose
