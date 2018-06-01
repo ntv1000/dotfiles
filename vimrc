@@ -80,6 +80,10 @@ map <leader>D <plug>NERDCommenterUncomment
 let g:airline_theme='molokai'
 let g:airline_section_z ='%l:%c  %p%%'
 let g:airline#extensions#hunks#enabled = 0
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.branch = ''
 
 " enable deoplete on start-up
 let g:deoplete#enable_at_startup = 1
