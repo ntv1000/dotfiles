@@ -9,9 +9,9 @@ nnoremap <leader>t :w<CR>:DeniteCursorWord tag -no-empty -mode=normal -smartcase
 
 
 " Comment line
-noremap <leader>d <plug>NERDCommenterComment
+nnoremap <leader>d <plug>NERDCommenterComment
 " Uncomment line
-noremap <leader>D <plug>NERDCommenterUncomment
+nnoremap <leader>D <plug>NERDCommenterUncomment
 
 
 " Go to next buffer
