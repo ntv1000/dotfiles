@@ -59,8 +59,20 @@ function! CloseIfNotLastWindow()
 	endif
 endfunction
 
+" Like bufdo but restore the current buffer and alternate buffer
+function! Bufdo(command)
+  let currBuf = bufnr("%")
+  let curaltBuf = bufnr('#')
+
+  execute 'bufdo ' . a:command
+  " restore previous/alt buffer
+  execute 'buffer ' . curaltBuf
+  " restore active buffer
+  execute 'buffer ' . currBuf
+endfunction
+
 " Reload all buffers and reenable syntax highlighting
 function! ReloadBuffers()
-	:bufdo e
+	call Bufdo("e")
 	:syntax on
 endfunction
