@@ -66,6 +66,14 @@ nnoremap <C-M-O> :nohlsearch<CR>
 " Don't yank when deleting a character
 nnoremap x "_x
 
+" Paste system clipboard
+nnoremap <leader>p "+p
+xnoremap <leader>p "+p
+" Yank into system clipboard
+nnoremap <leader>y "+y
+xnoremap <leader>y "+y
+
+
 " Jump to marks without the shift key
 nnoremap ´ `
 
