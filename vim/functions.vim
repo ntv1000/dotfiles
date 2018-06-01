@@ -59,6 +59,9 @@ function! MagicWindowClose()
 		let currBufName = bufname("%")
 		if (currBufName == "__Mundo__" || currBufName == "__Mundo_Preview__" || currBufName == "[[buffergator-buffers]]")
 			normal q
+		elseif (currBufName =~ "term://")
+			echo "quitting terminal :)"
+			:bwipeout!
 		else
 			quit
 		endif
