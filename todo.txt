@@ -1,14 +1,22 @@
-TODO integrate clipboards of vim/tmux/kde
+TODO incsearch.vim
 TODO use snippet plugin
-TODO Multicursor plugin
 TODO alias to open environment for project
-TODO change all maps to nore
-TODO better file structure: separate .bash_aliases file, multiple vim configs, install scripts like prompt.py with dotbot as well
+TODO better file structure: separate .bash_aliases file, install scripts like prompt.py with dotbot as well
 TODO buffergator try to remove status line
 TODO close buffergator if below a certain terminal size
-TODO add alias for git diff --no-index
+TODO @@ should execute last set macro "nmap q if Recording() then..."
+TODO https://vimawesome.com/plugin/surround-vim (maybe https://vimawesome.com/plugin/repeat-vim)
 
-TODO fix error in docs:
+BUG fix error in docs:
 let g:bufExplorerSplitVertSize=n          " New split window is n columns wide.
 should be:
 let g:bufExplorerSplitVertSize=n          " New split window is n columns wide.
+
+NOTES
+- General
+	- https://vimawesome.com
+	- https://statico.github.io/vim3.html
+- Git-related
+	- Hub - https://github.com/github/hub
+	- Rhubarb - https://vimawesome.com/plugin/vim-rhubarb
+- Polyglot - https://vimawesome.com/plugin/vim-polyglot
