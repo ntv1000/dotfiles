@@ -78,7 +78,7 @@ let g:NERDCommentEmptyLines = 1
 let g:airline_theme='molokai'
 
 " Customize line section
-let g:airline_section_z ='%l:%c  %p%%'
+let g:airline_section_z ='%p%%  %l:%c'
 
 " Disable showing huks added/changed/removed
 let g:airline#extensions#hunks#enabled = 0
