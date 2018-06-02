@@ -13,9 +13,11 @@ nnoremap <F1> :w<CR>:Denite help -no-empty -mode=insert -smartcase<CR>
 
 
 " Comment line
-nnoremap <leader>d <plug>NERDCommenterComment
+nmap <leader>d <plug>NERDCommenterComment
+xmap <leader>d <plug>NERDCommenterComment
 " Uncomment line
-nnoremap <leader>D <plug>NERDCommenterUncomment
+nmap <leader>D <plug>NERDCommenterUncomment
+xmap <leader>D <plug>NERDCommenterUncomment
 
 
 " Go to next buffer
