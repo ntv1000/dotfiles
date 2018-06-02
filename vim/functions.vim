@@ -45,7 +45,7 @@ endfunction
 " Close buffer without conflicting with buffergator
 function! CloseBuffer()
 	:BuffergatorClose
-	:bdelete
+	:bwipe
 	:BuffergatorOpen
 	:wincmd p
 endfunction
