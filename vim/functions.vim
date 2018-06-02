@@ -74,7 +74,9 @@ function! Bufdo(command)
 
 	execute 'bufdo ' . a:command
 	" restore previous/alt buffer
-	execute 'buffer ' . curaltBuf
+	if (curaltBuf != -1)
+		execute 'buffer ' . curaltBuf
+	endif
 	" restore active buffer
 	execute 'buffer ' . currBuf
 endfunction
