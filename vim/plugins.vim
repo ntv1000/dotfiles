@@ -125,6 +125,12 @@ let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
 " Remove mark from shada file when deleting it
 let g:SignatureForceRemoveGlobal = 1
 
+" Dynamically color marks according to git gutter status
+let g:SignatureMarkerTextHLDynamic = 1
+
+" Dynamically color markers according to git gutter status
+let g:SignatureMarkTextHLDynamic = 1
+
 " Keybindings
 let g:SignatureMap = {
 	\ 'Leader'             :  "m",
