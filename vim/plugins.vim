@@ -190,6 +190,7 @@ let g:tagbar_autofocus = 1
 " Use order in file
 let g:tagbar_sort = 0
 
+
 """""""""
 " Mundo "
 """""""""
@@ -197,8 +198,14 @@ let g:tagbar_sort = 0
 " Close mundo when selecting a graph node
 let g:mundo_close_on_revert = 1
 
+
+"""""""""""""
+" Gitgutter "
+"""""""""""""
+
+" Set custom signs
 let g:gitgutter_sign_added              = '●'
 let g:gitgutter_sign_modified           = '●'
-let g:gitgutter_sign_removed            = '⨯'
-let g:gitgutter_sign_removed_first_line = '⨯‾'
-let g:gitgutter_sign_modified_removed   = '⨯●'
+let g:gitgutter_sign_removed            = '⨉'
+let g:gitgutter_sign_removed_first_line = '⨉‾'
+let g:gitgutter_sign_modified_removed   = '⨉●'
