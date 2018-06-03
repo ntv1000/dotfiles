@@ -15,6 +15,7 @@ nnoremap <F1> :w<CR>:Denite help -no-empty -mode=insert -smartcase<CR>
 " Comment line
 nmap <leader>d <plug>NERDCommenterComment
 xmap <leader>d <plug>NERDCommenterComment
+
 " Uncomment line
 nmap <leader>D <plug>NERDCommenterUncomment
 xmap <leader>D <plug>NERDCommenterUncomment
@@ -76,8 +77,8 @@ nnoremap <C-M-O> :nohlsearch<CR>
 nnoremap x "_x
 
 " Paste system clipboard
-nnoremap <leader>p "+p
-xnoremap <leader>p "+p
+nnoremap <leader>p o<Esc>"+p
+xnoremap <leader>p o<Esc>"+p
 " Yank into system clipboard
 nnoremap <leader>y "+y
 xnoremap <leader>y "+y
