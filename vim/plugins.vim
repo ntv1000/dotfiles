@@ -15,6 +15,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'simnalamburt/vim-mundo'
 Plug 'easymotion/vim-easymotion'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-obsession'
 
 Plug 'w0rp/ale'
 Plug 'rust-lang/rust.vim'
@@ -88,7 +89,7 @@ let g:airline#extensions#hunks#enabled = 0
 
 " Disable branch icon
 if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
+	let g:airline_symbols = {}
 endif
 let g:airline_symbols.branch = ''
 
