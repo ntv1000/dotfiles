@@ -17,3 +17,6 @@ command! Ghist :call OpenTimeLapse()
 
 " Save file as root
 command! W :w !sudo tee %<CR>
+
+" Go to root directory of current git repository
+command! Gitroot :call GoToGitRoot()

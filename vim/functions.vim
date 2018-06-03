@@ -6,15 +6,18 @@ function! ToggleTagbar()
 	:wincmd p
 endfunction
 
+
 " Returns true if buffergator is currently open and false otherwise
 function! BuffergatorIsOpen()
 	return bufname("[[buffergator-buffers]]") == "[[buffergator-buffers]]"
 endfunction
 
+
 " Returns true if buffergator is currently the active buffer and false otherwise
 function! BuffergatorIsActive()
 	return bufname("%") == "[[buffergator-buffers]]"
 endfunction
+
 
 " Open TimeLapse in a new tab and avoid conflicts with buffergator while doing it
 function! OpenTimeLapse()
@@ -26,12 +29,14 @@ function! OpenTimeLapse()
 	:tabnext
 endfunction
 
+
 " Open a terminal buffer in a split below the current window, execute a command and give control back to user
 function! OpenSplitTerm(cmd)
 	belowright split
 	resize 15
 	execute "terminal bash -c \"" . a:cmd . " ; bash\""
 endfunction
+
 
 " Insert a tab or start auto-completion depending on the preceding character
 function! TabOrComplete()
@@ -42,6 +47,7 @@ function! TabOrComplete()
 	endif
 endfunction
 
+
 " Close buffer without conflicting with buffergator
 function! CloseBuffer()
 	:BuffergatorClose
@@ -49,6 +55,7 @@ function! CloseBuffer()
 	:BuffergatorOpen
 	:wincmd p
 endfunction
+
 
 " Close window if it it not the last window remaining, excluding buffergator
 " Also sends 'q' as a keypress instead of a command (':q') if it is in a window where a 'q' key press quits all associated windows. (e.g. Mundo)
@@ -67,6 +74,7 @@ function! MagicWindowClose()
 	endif
 endfunction
 
+
 " Like bufdo but restore the current buffer and alternate buffer
 function! Bufdo(command)
 	let currBuf = bufnr("%")
@@ -81,8 +89,24 @@ function! Bufdo(command)
 	execute 'buffer ' . currBuf
 endfunction
 
+
 " Reload all buffers and reenable syntax highlighting
 function! ReloadBuffers()
 	call Bufdo("e")
 	:syntax on
+endfunction
+
+
+" Change the working directory to git root if available
+function! GoToGitRoot() abort
+	let l:git_dir = finddir(".git", ";")
+	if l:git_dir != ''
+		execute 'cd' fnameescape(l:git_dir)
+		execute 'cd ../'
+
+		let l:pwd = getcwd()
+		echo 'Found git root: ' . l:pwd
+	else
+		echo 'Could not find git root.'
+	endif
 endfunction
