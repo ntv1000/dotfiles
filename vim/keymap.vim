@@ -1,15 +1,17 @@
 " Open denite for file recursive search
-nnoremap <leader>f :w<CR>:Denite file/rec -smartcase -immediately-1<CR>
+nnoremap <leader>f :Denite file/rec -smartcase -immediately-1<CR>
 " Open denite for grepping
-nnoremap <leader>g :w<CR>:Denite grep -no-empty -mode=normal -smartcase -immediately-1<CR>
+nnoremap <leader>g :Denite grep -no-empty -mode=normal -smartcase -immediately-1<CR>
 " Open denite for grepping for the word under cursor
-nnoremap <M-*> :w<CR>:DeniteCursorWord grep -no-empty -mode=normal -smartcase -immediately-1<CR>
+nnoremap <M-*> :DeniteCursorWord grep -no-empty -mode=normal -smartcase -immediately-1<CR>
 " Open denite for searching for tag under cursor
-nnoremap <leader>t :w<CR>:DeniteCursorWord tag -no-empty -mode=normal -smartcase -immediately-1<CR>
+nnoremap <leader>t :DeniteCursorWord tag -no-empty -mode=normal -smartcase -immediately-1<CR>
 " Open denite for switching buffer
-nnoremap <Tab> :w<CR>:Denite buffer -no-empty -mode=normal -smartcase -immediately-1<CR>
+nnoremap <Tab> :Denite buffer -no-empty -mode=normal -smartcase -immediately-1<CR>
 " Open denite for searching help files
-nnoremap <F1> :w<CR>:Denite help -no-empty -mode=insert -smartcase<CR>
+nnoremap <F1> :Denite help -no-empty -mode=insert -smartcase<CR>
+" Open denite for searching jumps
+nnoremap <leader>j :Denite jump -no-empty -mode=normal -auto-highlight -smartcase<CR>
 
 
 " Comment line
