@@ -14,6 +14,9 @@ command! Greset !git reset
 " Open Time Lapse
 command! Ghist :call OpenTimeLapse()
 
+" Fugitive commit and show diff in commit buffer
+command! -nargs=* Gchanges :exec "Git! diff " . <q-args>
+
 
 " Save file as root
 command! W :w !sudo tee %<CR>
