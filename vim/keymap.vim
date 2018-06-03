@@ -59,6 +59,10 @@ inoremap <M-CR> <Esc>:wq<CR>
 tnoremap <Esc> <C-\><C-n>
 
 
+" Reindent file
+nnoremap == :keepjumps normal! mpgg=G`p<CR>:delmarks p<CR>
+
+
 " Easymotion prefix
 map <Space> <Plug>(easymotion-prefix)
 
