@@ -64,7 +64,7 @@ nnoremap == :keepjumps normal! mpgg=G`p<CR>:delmarks p<CR>
 
 
 " Easymotion prefix
-map <Space> <Plug>(easymotion-prefix)
+noremap <Space> <Plug>(easymotion-prefix)
 
 
 " Indent line
