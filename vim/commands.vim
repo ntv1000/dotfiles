@@ -9,7 +9,7 @@ command! -nargs=* Gc :exec "Gcommit --verbose " . <q-args> | exec "resize " . st
 command! -nargs=* Gs :Gstatus | exec "resize " . string(winheight(winnr("$"))*1/2)
 
 " Reset git index
-command! Greset silent exec "!git reset"
+command! Greset !git reset
 
 " Open Time Lapse
 command! Ghist :call OpenTimeLapse()
