@@ -7,7 +7,7 @@ nnoremap <M-*> :DeniteCursorWord grep -no-empty -mode=normal -smartcase -immedia
 " Open denite for searching for tag under cursor
 nnoremap <leader>t :DeniteCursorWord tag -no-empty -mode=normal -smartcase -immediately-1<CR>
 " Open denite for switching buffer
-nnoremap <Tab> :Denite buffer -no-empty -mode=normal -smartcase -immediately-1<CR>
+nnoremap <Tab> :Denite buffer -no-empty -cursor-wrap -mode=normal -smartcase -immediately-1<CR>
 " Open denite for searching help files
 nnoremap <F1> :Denite help -no-empty -mode=insert -smartcase<CR>
 " Open denite for searching jumps
