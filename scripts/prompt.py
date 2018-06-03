@@ -2,10 +2,12 @@ import os
 import subprocess
 from socket import gethostname
 
+
 def gen_git_status():
     status_cmd = "git status"
 
-    process = subprocess.Popen(status_cmd.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    process = subprocess.Popen(status_cmd.split(),
+                               stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     output, _ = process.communicate()
 
     if process.returncode != 0:
@@ -23,32 +25,50 @@ def gen_git_status():
     deleted = False
 
     for line in output.split("\n"):
-        if "On branch" in line: branch = " ".join(line.split(" ")[2:])
-        if "modified:" in line: dirty = True
-        if "Untracked files:" in line: untracked = True
-        if "Your branch is ahead of" in line: ahead = True
-        if "newfile:" in line: newfile = True
-        if "renamed:" in line: renamed = True
-        if "deleted:" in line: deleted = True
+        # TODO handle the case where status doens't print a "On branch" line
+        if "On branch" in line:
+            branch = " ".join(line.split(" ")[2:])
+        if "modified:" in line:
+            dirty = True
+        if "Untracked files:" in line:
+            untracked = True
+        if "Your branch is ahead of" in line:
+            ahead = True
+        if "newfile:" in line:
+            newfile = True
+        if "renamed:" in line:
+            renamed = True
+        if "deleted:" in line:
+            deleted = True
 
     bits = ""
-    if renamed: bits += ">"
-    if ahead: bits += "*"
-    if newfile: bits += "+"
-    if untracked: bits += "?"
-    if deleted: bits += "x"
-    if dirty: bits += "!"
+    if renamed:
+        bits += ">"
+    if ahead:
+        bits += "*"
+    if newfile:
+        bits += "+"
+    if untracked:
+        bits += "?"
+    if deleted:
+        bits += "x"
+    if dirty:
+        bits += "!"
 
-    if bits != "": bits = " " + bits
+    if bits != "":
+        bits = " " + bits
 
     return " [{branch}{bits}]".format(branch=branch, bits=bits)
 
 
 def color(s, color):
-    return "{color}{s}{nc}".format(s=s, color=color, nc=nc);
+    return "{color}{s}{nc}".format(s=s, color=color, nc=nc)
+
 
 hostname = gethostname().split(".")[0]
 username = os.environ["USER"]
+
+# TODO this doesn't work when cd'ing into a symbolic link to a directory
 pwd = os.getcwd()
 homedir = os.path.expanduser("~")
 pwd = pwd.replace(homedir, "~", 1)
@@ -59,29 +79,27 @@ green = "\\[\033[92m\\]"
 blue = "\\[\033[36m\\]"
 red = "\\[\033[31m\\]"
 
-# Two separate field versions are necessary as the coloring changes the length of the string
-fields = {
-        "username" : username,
-        "at" : "@",
-        "hostname" : hostname,
-        "pwd" : pwd,
-        "git" : git
-        }
+# Two separate field versions are necessary as the coloring changes the length
+# of the string
+fields = {"username": username, "at": "@", "hostname": hostname, "pwd": pwd,
+          "git": git}
 
 colored_fields = {
-        "username" : color(username, green),
-        "at" : color("@", green),
-        "hostname" : color(hostname, green),
-        "pwd" : color(pwd, blue),
-        "git" : color(git, red)
+        "username": color(username, green),
+        "at": color("@", green),
+        "hostname": color(hostname, green),
+        "pwd": color(pwd, blue),
+        "git": color(git, red)
         }
 
 
 def gen(prompt):
     return prompt.format(**fields)
 
+
 def gen_colored(prompt):
     return prompt.format(**colored_fields)
+
 
 prompt = "{username}{at}{hostname}:{pwd}{git}$ "
 
