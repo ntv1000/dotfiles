@@ -56,8 +56,8 @@ inoremap <M-CR> <Esc>:wq<CR>
 tnoremap <Esc> <C-\><C-n>
 
 
-" Shoot a laser
-nnoremap <Space> :silent exec "! aplay ~/dotfiles/laser.wav > /tmp/output 2>&1 &"<CR>
+" Easymotion prefix
+map <Space> <Plug>(easymotion-prefix)
 
 
 " Indent line
