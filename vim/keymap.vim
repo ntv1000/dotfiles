@@ -78,7 +78,7 @@ nnoremap x "_x
 
 " Paste system clipboard
 nnoremap <leader>p o<Esc>"+p
-xnoremap <leader>p o<Esc>"+p
+xnoremap <leader>p "+p
 " Yank into system clipboard
 nnoremap <leader>y "+y
 xnoremap <leader>y "+y
