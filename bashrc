@@ -31,6 +31,9 @@ export PROMPT_COMMAND='PS1="$(python3 ~/dotfiles/scripts/prompt.py)"'
 
 # avoid duplicates..
 export HISTCONTROL=ignoredups:erasedups
+# set maximum size for history file
+export HISTFILESIZE=-1
+export HISTSIZE=-1
 # append history entries..
 shopt -s histappend
 # After each command, save and reload history
