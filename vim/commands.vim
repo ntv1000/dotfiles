@@ -10,3 +10,7 @@ command! Greset silent exec "!git reset"
 
 " Open Time Lapse
 command! Ghist :call OpenTimeLapse()
+
+
+" Save file as root
+command! W :w !sudo tee %<CR>
