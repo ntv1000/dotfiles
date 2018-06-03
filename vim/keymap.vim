@@ -87,6 +87,9 @@ xnoremap <leader>y "+y
 " Jump to marks without the shift key
 nnoremap ´ `
 
+" Don't jump to first result when using '*', but don't clutter the jump list
+nnoremap <silent> * :keepjumps normal! mp*`p<CR>:delmarks p<CR>
+
 
 " Run Make
 nnoremap <leader>m :make<CR>
