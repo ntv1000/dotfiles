@@ -24,6 +24,16 @@ function is_ssh_fs_path() {
 	fi
 }
 
+function se() {
+	SESSION_DIR="$HOME/sessions"
+
+	if [ -z "$1" ]; then
+		ls $SESSION_DIR
+	else
+		MYVIMRC="$HOME/.vimrc" nvim -u $HOME/.vimrc -S $SESSION_DIR/$1.vim
+	fi
+}
+
 export TERM="screen-256color"
 
 # Use python script for prompt text
