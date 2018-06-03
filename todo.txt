@@ -1,5 +1,9 @@
+TODO don't jump to first result on *
+TODO fix reloading all buffers when there is currently no alternate buffer
+TODO fix prompt when there is no current branch
 TODO incsearch.vim
 TODO use snippet plugin
+TODO git cd alias to go to git root
 TODO alias to open environment for project
 TODO better file structure: separate .bash_aliases file, install scripts like prompt.py with dotbot as well
 TODO buffergator try to remove status line
