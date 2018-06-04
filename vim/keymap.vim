@@ -61,10 +61,24 @@ nnoremap <Space> :silent exec "! aplay ~/dotfiles/laser.wav > /tmp/output 2>&1 &
 
 
 " Indent line
+nnoremap > >>
 xnoremap <Tab> >
 " Unindent line
+nnoremap < <<
 xnoremap <S-Tab> <
 
+
+" Add whitespaces
+" TODO don't clutter jumplist
+nnoremap <M-j> mpo<Esc>`p:delmarks p<CR>
+nnoremap <M-J> mpjdd`p:delmarks p<CR>
+nnoremap <M-k> mpO<Esc>`p:delmarks p<CR>
+nnoremap <M-K> mpkdd`p:delmarks p<CR>
+
+nnoremap <Up>    :resize +5<CR>
+nnoremap <Down>  :resize -5<CR>
+nnoremap <Left>  :vertical resize -5<CR>
+nnoremap <Right> :vertical resize +5<CR>
 
 " Insert blank line
 nnoremap <C-O> o<Esc>
