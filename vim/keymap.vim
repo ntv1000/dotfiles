@@ -83,6 +83,14 @@ nnoremap <silent> <C-k> m`O<Esc>``
 nnoremap <silent> <C-M-j> m`jdd``
 nnoremap <silent> <C-M-k> m`kdd``
 
+" Add space left/right
+nnoremap <silent> <C-h> i<Space><Esc>l
+nnoremap <silent> <C-l> li<Space><Esc>h
+
+" Remove space left/right
+map <silent> <C-M-h> hx
+nmap <silent> <C-M-l> lxh
+
 
 " Move lines down/up
 nnoremap <M-j> :m +1<CR>
