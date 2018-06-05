@@ -24,9 +24,9 @@ xmap <leader>D <plug>NERDCommenterUncomment
 
 
 " Go to next buffer
-nnoremap <C-j> :bnext<CR>
+nnoremap J :bnext<CR>
 " Go to next buffer
-nnoremap <C-k> :bprev<CR>
+nnoremap K :bprev<CR>
 " Switch to last buffer
 nnoremap # :e #<CR>
 " Close currently active buffer
