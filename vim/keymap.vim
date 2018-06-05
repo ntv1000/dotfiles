@@ -68,8 +68,10 @@ noremap <Space> <Plug>(easymotion-prefix)
 
 
 " Indent line
+nnoremap > >>
 xnoremap <Tab> >
 " Unindent line
+nnoremap < <<
 xnoremap <S-Tab> <
 
 
