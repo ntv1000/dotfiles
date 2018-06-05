@@ -60,7 +60,7 @@ tnoremap <Esc> <C-\><C-n>
 
 
 " Reindent file
-nnoremap == :keepjumps normal! mpgg=G`p<CR>:delmarks p<CR>
+nnoremap == m`gg=G``
 
 
 " Easymotion prefix
@@ -76,12 +76,13 @@ xnoremap <S-Tab> <
 
 
 " Add blank line below/above
-nnoremap <silent> <C-j> mpo<Esc>`p:delmark p<CR>
-nnoremap <silent> <C-k> mpO<Esc>`p:delmark p<CR>
+nnoremap <silent> <C-j> m`o<Esc>``
+nnoremap <silent> <C-k> m`O<Esc>``
 
 " Remove line below/above
-nnoremap <silent> <C-M-j> mpjdd`p:delmark p<CR>
-nnoremap <silent> <C-M-k> mpkdd`p:delmark p<CR>
+nnoremap <silent> <C-M-j> m`jdd``
+nnoremap <silent> <C-M-k> m`kdd``
+
 
 " Move lines down/up
 nnoremap <M-j> :m +1<CR>
