@@ -75,8 +75,29 @@ nnoremap < <<
 xnoremap <S-Tab> <
 
 
-" Insert blank line
-nnoremap <C-O> o<Esc>
+" Add blank line below/above
+nnoremap <silent> <C-j> mpo<Esc>`p:delmark p<CR>
+nnoremap <silent> <C-k> mpO<Esc>`p:delmark p<CR>
+
+" Remove line below/above
+nnoremap <silent> <C-M-j> mpjdd`p:delmark p<CR>
+nnoremap <silent> <C-M-k> mpkdd`p:delmark p<CR>
+
+" Move lines down/up
+nnoremap <M-j> :m +1<CR>
+nnoremap <M-k> :m -2<CR>
+
+
+" Resize current window
+nnoremap <Up>    :resize +5<CR>
+nnoremap <Down>  :resize -5<CR>
+nnoremap <Right> :vertical resize +5<CR>
+nnoremap <Left>  :vertical resize -5<CR>
+
+
+" Join line below with current line
+nnoremap <C-O> J
+
 
 " Disable search highlightings
 nnoremap <C-M-O> :nohlsearch<CR>
