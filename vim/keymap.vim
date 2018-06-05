@@ -64,7 +64,7 @@ nnoremap == m`gg=G``
 
 
 " Easymotion prefix
-noremap <Space> <Plug>(easymotion-prefix)
+map <Space> <Plug>(easymotion-prefix)
 
 
 " Indent line
