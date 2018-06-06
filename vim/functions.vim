@@ -110,3 +110,17 @@ function! GoToGitRoot() abort
 		echo 'Could not find git root.'
 	endif
 endfunction
+
+
+" Toggle character at the end of line
+function! ToggleEndChar(char) abort
+	let l:old = getline('.')
+
+	if l:old =~ a:char . '$'
+		let l:new = substitute(l:old, '\v'.a:char.'$', '', '')
+	else
+		let l:new = l:old . a:char
+	endif
+
+	call setline('.', l:new)
+endfunction

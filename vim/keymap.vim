@@ -122,6 +122,10 @@ nnoremap <leader>y "+y
 xnoremap <leader>y "+y
 
 
+" Toggle semi-colon at the end of line
+nnoremap ; :call ToggleEndChar(';')<CR>
+
+
 " Jump to marks without the shift key
 nnoremap ´ `
 
