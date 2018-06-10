@@ -126,6 +126,11 @@ xnoremap <leader>y "+y
 nnoremap ; :call ToggleEndChar(';')<CR>
 
 
+" Increment/Decrement number under cursor
+nmap <Leader>+ <C-a>
+nmap <Leader>- <C-x>
+
+
 " Jump to marks without the shift key
 nnoremap ´ `
 
