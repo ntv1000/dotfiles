@@ -16,6 +16,7 @@ Plug 'simnalamburt/vim-mundo'
 Plug 'easymotion/vim-easymotion'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-repeat'
 
 Plug 'w0rp/ale'
 Plug 'rust-lang/rust.vim'
