@@ -41,3 +41,9 @@ set hidden
 " Mainly for gitgutter
 set signcolumn=yes
 set updatetime=100
+
+" Avoid annoying 'q' characters after starting vim
+" https://github.com/neovim/neovim/wiki/FAQ#nvim-shows-weird-symbols-2-q-when-changing-modes
+set guicursor=
+" Workaround some broken plugins which set guicursor indiscriminately.
+autocmd OptionSet guicursor noautocmd set guicursor=
