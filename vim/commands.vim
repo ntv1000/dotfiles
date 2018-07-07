@@ -19,7 +19,7 @@ command! -nargs=* Gchanges :exec "Git! diff " . <q-args>
 
 
 " Save file as root
-command! W :w !sudo tee %<CR>
+command! W :call SudoWrite()
 
 " Go to root directory of current git repository
 command! Gitroot :call GoToGitRoot()

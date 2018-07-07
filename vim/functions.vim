@@ -124,3 +124,8 @@ function! ToggleEndChar(char) abort
 
 	call setline('.', l:new)
 endfunction
+
+function! SudoWrite() abort
+	:w !sudo tee > /dev/null %
+	:e!
+endfunction
