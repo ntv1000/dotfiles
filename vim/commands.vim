@@ -21,5 +21,8 @@ command! -nargs=* Gchanges :exec "Git! diff " . <q-args>
 " Save file as root
 command! W :call SudoWrite()
 
+" Save file as root and quit
+command! Wq :call SudoWrite() | :q
+
 " Go to root directory of current git repository
 command! Gitroot :call GoToGitRoot()
