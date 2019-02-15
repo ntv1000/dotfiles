@@ -80,7 +80,7 @@ let g:NERDCommentEmptyLines = 1
 """""""""""
 
 " Set theme
-let g:airline_theme='molokai'
+let g:airline_theme='onedark'
 
 " Customize line section
 let g:airline_section_z ='%p%%  %l:%c'
