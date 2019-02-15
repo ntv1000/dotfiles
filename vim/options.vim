@@ -10,6 +10,7 @@ set number
 " Set tab width to 4
 set tabstop=4
 set shiftwidth=4
+set encoding=utf-8
 
 " Make searches case INsensitive with smartcase
 set ignorecase
