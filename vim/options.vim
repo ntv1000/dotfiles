@@ -47,3 +47,10 @@ set updatetime=100
 set guicursor=
 " Workaround some broken plugins which set guicursor indiscriminately.
 autocmd OptionSet guicursor noautocmd set guicursor=
+
+" Use persistent undo-history.
+if !isdirectory('/tmp/.vim-undo-dir')
+	call mkdir('/tmp/.vim-undo-dir', '', 0700)
+endif
+set undodir=/tmp/.vim-undo-dir
+set undofile
