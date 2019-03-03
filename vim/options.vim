@@ -55,3 +55,6 @@ if !isdirectory('/tmp/.vim-undo-dir')
 endif
 set undodir=/tmp/.vim-undo-dir
 set undofile
+
+" Specify that relative paths in tagfiles are relative to the tagfile location
+set tagrelative
