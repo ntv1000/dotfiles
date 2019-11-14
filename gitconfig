@@ -6,6 +6,7 @@
 	lg = !"git lg1"
 
 	raph = !"git pull --rebase --autostash"
+	cop = !"git diff -p -R --no-color | grep -E \"^(diff|(old|new) mode)\" --color=never | git apply"
 [merge]
 	tool = vimdiff
 	conflictstyle = diff3
