@@ -58,3 +58,6 @@ set undofile
 
 " Specify that relative paths in tagfiles are relative to the tagfile location
 set tagrelative
+
+" Save cursor position when switching buffer
+set nostartofline
