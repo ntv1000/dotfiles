@@ -34,6 +34,31 @@ call plug#end()
 " Denite "
 """"""""""
 
+" Settings for denite buffer
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+	" Define key-mappings
+	nnoremap <silent><buffer><expr> <CR> denite#do_map('do_action')
+	nnoremap <silent><buffer><expr> d denite#do_map('do_action', 'delete')
+	nnoremap <silent><buffer><expr> p denite#do_map('do_action', 'preview')
+	nnoremap <silent><buffer><expr> q denite#do_map('quit')
+	nnoremap <silent><buffer><expr> i denite#do_map('open_filter_buffer')
+	nnoremap <silent><buffer><expr> <Space> denite#do_map('toggle_select').'j'
+endfunction
+
+" Settings for filter buffer
+autocmd FileType denite-filter call s:denite_filter_my_settings()
+function! s:denite_filter_my_settings() abort
+	" Close filter buffer directly from insert mode
+	imap <silent><buffer> <Esc> <Plug>(denite_filter_quit)
+
+	" Do action directly from insert mode
+	imap <silent><buffer> <CR> <Plug>(denite_filter_quit)<CR>
+
+	" Disable autocompletion when filtering
+	call deoplete#custom#buffer_option('auto_complete', v:false)
+endfunction
+
 " Use ripgrep in grep source
 call denite#custom#var('grep', 'command', ['rg'])
 call denite#custom#var('grep', 'default_opts', ['--vimgrep', '--no-heading', '-uu', '--smart-case'])
@@ -46,6 +71,7 @@ call denite#custom#var('grep', 'final_opts', [])
 call denite#custom#source('grep', 'converters', ['converter/abbr_word'])
 
 " Enable moving between lines while in insert mode
+" TODO These do not work anymore
 call denite#custom#map(
 	\ 'insert',
 	\ '<C-j>',

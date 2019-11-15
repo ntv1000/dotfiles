@@ -1,17 +1,17 @@
-" Open denite for file recursive search
-nnoremap <leader>f :Denite file/rec -smartcase -immediately-1<CR>
+" Open denite for file recursive search, but search entire git repo if there is one
+nnoremap <silent><leader>f :Denite file/rec:`finddir('.git', ';') != '' ? fnamemodify(finddir('.git', ';'), ':h') : ''` -start-filter -immediately-1<CR>
 " Open denite for grepping
-nnoremap <leader>g :Denite grep -no-empty -mode=normal -smartcase -immediately-1<CR>
+nnoremap <silent><leader>g :Denite grep:`finddir('.git', ';') != '' ? fnamemodify(finddir('.git', ';'), ':h') : ''` -no-empty -immediately-1<CR>
 " Open denite for grepping for the word under cursor
-nnoremap <M-*> :DeniteCursorWord grep -no-empty -mode=normal -smartcase -immediately-1<CR>
+nnoremap <silent><M-*> :DeniteCursorWord grep:`finddir('.git', ';') != '' ? fnamemodify(finddir('.git', ';'), ':h') : ''` -no-empty -immediately-1<CR>
 " Open denite for searching for tag under cursor
-nnoremap <leader>t :DeniteCursorWord tag -no-empty -mode=normal -smartcase -immediately-1<CR>
+nnoremap <silent><leader>t :DeniteCursorWord tag -no-empty -immediately-1<CR>
 " Open denite for switching buffer
-nnoremap <Tab> :Denite buffer -no-empty -cursor-wrap -mode=insert -smartcase -immediately-1<CR>
+nnoremap <silent><Tab> :Denite buffer -no-empty -cursor-wrap -start-filter -immediately-1<CR>
 " Open denite for searching help files
-nnoremap <F1> :Denite help -no-empty -mode=insert -smartcase<CR>
+nnoremap <silent><F1> :Denite help -no-empty -start-filter<CR>
 " Open denite for searching jumps
-nnoremap <leader>j :Denite jump -no-empty -mode=normal -auto-highlight -smartcase<CR>
+nnoremap <silent><leader>j :Denite jump -no-empty -auto-highlight<CR>
 
 
 " Comment line
