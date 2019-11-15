@@ -21,6 +21,7 @@ Plug 'tpope/vim-repeat'
 Plug 'w0rp/ale'
 Plug 'rust-lang/rust.vim'
 Plug 'lervag/vimtex'
+Plug 'OmniSharp/omnisharp-vim'
 
 Plug 'joshdick/onedark.vim'
 
@@ -118,6 +119,10 @@ if !exists('g:deoplete#omni#input_patterns')
 	let g:deoplete#omni#input_patterns = {}
 endif
 let g:deoplete#omni#input_patterns.tex = g:vimtex#re#deoplete
+
+call deoplete#custom#option('sources', {
+		\ 'cs': ['omnisharp'],
+		\})
 
 
 """""""""""""
@@ -217,3 +222,18 @@ let g:gitgutter_sign_modified           = '●'
 let g:gitgutter_sign_removed            = '✖'
 let g:gitgutter_sign_removed_first_line = '✖‾'
 let g:gitgutter_sign_modified_removed   = '●_'
+
+
+"""""""
+" ALE "
+"""""""
+
+" Enable OmniSharp linter
+let g:ale_linters = { 'cs': ['OmniSharp'] }
+
+
+"""""""""""""
+" OmniSharp "
+"""""""""""""
+
+let g:OmniSharp_timeout = 5
