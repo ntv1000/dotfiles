@@ -74,10 +74,17 @@ homedir = os.path.expanduser("~")
 pwd = pwd.replace(homedir, "~", 1)
 git = gen_git_status()
 
-nc = "\\[\033[0m\\]"
-green = "\\[\033[92m\\]"
-blue = "\\[\033[36m\\]"
-red = "\\[\033[31m\\]"
+# bash colors
+# nc = "\\[\033[0m\\]"
+# green = "\\[\033[92m\\]"
+# blue = "\\[\033[36m\\]"
+# red = "\\[\033[31m\\]"
+
+# zsh colors
+nc = "%{$reset_color%}"
+green = "%{$fg[green]%}"
+blue = "%{$fg[blue]%}"
+red = "%{$fg[red]%}"
 
 # Two separate field versions are necessary as the coloring changes the length
 # of the string
