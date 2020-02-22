@@ -34,7 +34,8 @@ endfunction
 function! OpenSplitTerm(cmd)
 	belowright split
 	resize 15
-	execute "terminal bash -c \"" . a:cmd . " ; bash\""
+	execute "terminal zsh -c \"" . a:cmd . " ; zsh\""
+	execute "normal! G"
 endfunction
 
 
