@@ -1,3 +1,7 @@
+###############
+# Environment #
+###############
+
 # Auto-start tmux
 # https://unix.stackexchange.com/questions/43601/how-can-i-set-my-default-shell-to-start-up-tmux
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
@@ -5,7 +9,12 @@ if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
 fi
 
 # Extend PATH
-PATH=$PATH:$HOME/.local/bin/
+export PATH=$PATH:$HOME/.local/bin/
+
+# Set default editor
+# https://unix.stackexchange.com/questions/4859/visual-vs-editor-what-s-the-difference
+export EDITOR=nvim
+export VISUAL=nvim
 
 # Default options for fzf
 #export FZF_DEFAULT_OPTS="--bind=alt-j:down,alt-k:up"
