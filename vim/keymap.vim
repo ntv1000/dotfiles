@@ -141,7 +141,7 @@ nnoremap <silent> * :keepjumps normal! mp*`p<CR>:delmarks p<CR>
 " Run Make
 nnoremap <leader>m :make<CR>
 " Open terminal and execute cargo run
-nnoremap <leader>x :call OpenSplitTerm("cargo run")<CR>
+nnoremap <leader>x :call OpenSplitTerm("make")<CR>
 
 
 " Start tab-completion and next item on the completion list
