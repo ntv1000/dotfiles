@@ -168,6 +168,22 @@ function fh() {
   print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac --height 12 | sed -r 's/ *[0-9]*\*? *//' | sed -r 's/\\/\\\\/g')
 }
 
+function __gi() {
+  curl -L -s https://www.gitignore.io/api/"$@"
+}
+
+function gi() {
+	if  [ "$#" -eq 0 ]; then
+		IFS+=","
+		for item in $(__gi list); do
+			echo $item
+		done | fzf --multi --ansi | paste -s -d "," - |
+		{ read result && __gi "$result"; }
+	else
+		__gi "$@"
+	fi
+}
+
 
 
 
