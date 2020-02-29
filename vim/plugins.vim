@@ -18,6 +18,8 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
 Plug 'lambdalisue/suda.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-sleuth'
 
 Plug 'w0rp/ale'
 Plug 'rust-lang/rust.vim'
