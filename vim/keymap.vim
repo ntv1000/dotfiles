@@ -144,8 +144,8 @@ nnoremap <silent> * :keepjumps normal! mp*`p<CR>:delmarks p<CR>
 
 
 " Run Make
-nnoremap <leader>m :make<CR>
-" Open terminal and execute cargo run
+nnoremap <leader>b :make<CR>
+" Open terminal and execute make
 nnoremap <leader>x :call OpenSplitTerm("make")<CR>
 
 
