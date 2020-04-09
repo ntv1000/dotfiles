@@ -9,7 +9,7 @@ if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
 fi
 
 # Extend PATH
-export PATH=$PATH:$HOME/.local/bin/
+export PATH=$PATH:$HOME/.local/bin/:$HOME/bin:/var/lib/snapd/snap/bin
 
 # Set default editor
 # https://unix.stackexchange.com/questions/4859/visual-vs-editor-what-s-the-difference
@@ -97,6 +97,9 @@ bindkey -s '^[k' ''
 bindkey -s '^[j' ''
 bindkey '^[[Z' reverse-menu-complete
 bindkey -M menuselect '^M' .accept-line
+# For this to work the escape sequence needs to be set to be mapped to a key
+# combination in the terminal emulator. In Konsole, for example, you could set
+# "Return+Ctrl" to "\E[[CE".
 bindkey '^[[[CE' autosuggest-execute
 
 # Command history
@@ -156,7 +159,7 @@ function git-replace-author {
         fi' -- --all
 }
 
-function fd() {
+function finddir() {
   local dir
   dir=$(find ${1:-.} -path '*/\.*' -prune \
                   -o -type d -print 2> /dev/null | fzf +m) &&
@@ -184,7 +187,17 @@ function gi() {
 	fi
 }
 
+function fzf-findfiles {
+local files
 
+files=($(fd "$1" --type f --no-ignore --hidden --follow --exclude '.git/' | fzf --query="$1" --height=22 -m -0))
+  [[ -n "$files" ]] && vim "${files[@]}"
+  zle accept-line
+}
+
+zle -N fzf-findfiles
+
+bindkey '^f' fzf-findfiles
 
 
 
