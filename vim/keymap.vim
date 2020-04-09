@@ -7,11 +7,11 @@ nnoremap <silent><M-*> :DeniteCursorWord grep:`finddir('.git', ';') != '' ? fnam
 " Open denite for searching for tag under cursor
 nnoremap <silent><leader>t :DeniteCursorWord tag -no-empty -immediately-1<CR>
 " Open denite for switching buffer
-nnoremap <silent><Tab> :Denite buffer -no-empty -cursor-wrap -start-filter -immediately-1<CR>
+nnoremap <silent><Tab> :Denite buffer -no-empty -immediately-1<CR>
 " Open denite for searching help files
 nnoremap <silent><F1> :Denite help -no-empty -start-filter<CR>
 " Open denite for searching jumps
-nnoremap <silent><leader>j :Denite jump -no-empty -auto-highlight<CR>
+nnoremap <silent><leader>j :Denite jump -no-empty -auto-action=highlight<CR>
 
 
 " Comment line
