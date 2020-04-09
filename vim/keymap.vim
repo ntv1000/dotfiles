@@ -38,7 +38,7 @@ nnoremap # :e #<CR>
 nnoremap <Backspace> :call CloseBuffer()<CR>
 
 " Close currently active tab
-nnoremap <M-Backspace> :tabclose<CR>
+nnoremap <M-Backspace> :TabClose<CR>
 " Close currently active window
 nnoremap <Esc> :call MagicWindowClose()<CR>
 

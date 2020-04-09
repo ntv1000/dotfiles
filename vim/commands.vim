@@ -24,5 +24,10 @@ command! W :w suda://%
 " Save file as root and quit
 command! Wq :w suda://% | :q
 
+
 " Go to root directory of current git repository
 command! Gitroot :call GoToGitRoot()
+
+
+" Close tab and delete all buffers that are opened in the tab.
+command! TabClose :windo bd
