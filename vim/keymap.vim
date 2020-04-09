@@ -114,7 +114,7 @@ nnoremap <C-O> J
 
 
 " Disable search highlightings
-nnoremap <C-M-O> :nohlsearch<CR>
+nnoremap <leader><Esc> :nohlsearch<CR>
 
 " Don't yank when deleting a character
 nnoremap x "_x
