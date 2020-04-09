@@ -8,6 +8,8 @@
 	raph = !"git pull --rebase --autostash"
 	cop = !"git diff -p -R --no-color | grep -E \"^(diff|(old|new) mode)\" --color=never | git apply"
 
+	rmgone = !"git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done"
+
 [merge]
 	tool = vimdiff
 	conflictstyle = diff3
