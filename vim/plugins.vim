@@ -8,8 +8,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/git-time-lapse'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/denite.nvim'
-Plug 'majutsushi/tagbar'
-Plug 'jeetsukumaran/vim-buffergator'
 Plug 'kshenoy/vim-signature'
 Plug 'scrooloose/nerdcommenter'
 Plug 'simnalamburt/vim-mundo'
@@ -191,46 +189,6 @@ let g:SignatureMap = {
 	\ 'ListBufferMarks'    :  "m/",
 	\ 'ListBufferMarkers'  :  "m?"
 	\ }
-
-
-"""""""""""""""
-" Buffergator "
-"""""""""""""""
-
-" Disable default mappings
-let g:buffergator_suppress_keymaps = 1
-
-" Open buffergator on the right
-let g:buffergator_viewport_split_policy = "R"
-
-" Set size of vertical split
-let g:buffergator_vsplit_size = 30
-
-" Don't close buffergator when selecting an entry
-let g:buffergator_autodismiss_on_select = 0
-
-" Automatically update bufferlist
-let g:buffergator_autoupdate = 1
-
-" Use buffer name as list entry
-let g:buffergator_display_regime = "bufname"
-
-" Sort by buffer index (order of opening)
-let g:buffergator_sort_regime = "bufnum"
-
-
-""""""""""
-" Tagbar "
-""""""""""
-
-" Automatically close tabbar when selecting an entry
-let g:tagbar_autoclose = 1
-
-" Automatically focus tagbar when opening
-let g:tagbar_autofocus = 1
-
-" Use order in file
-let g:tagbar_sort = 0
 
 
 """""""""

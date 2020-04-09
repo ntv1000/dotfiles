@@ -150,12 +150,6 @@ inoremap <Tab> <C-R>=TabOrComplete()<CR>
 inoremap <S-Tab> <C-P>
 
 
-" Toggle tagbar
-nnoremap <F8> :call ToggleTagbar()<CR>
-
-" Toggle buffergator
-nnoremap <leader>b :BuffergatorToggle<CR>
-
 " Toggle mundo
 nnoremap <leader>u :MundoToggle<CR>
 

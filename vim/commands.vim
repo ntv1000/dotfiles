@@ -12,7 +12,7 @@ command! -nargs=* Gs :Gstatus | exec "resize " . string(winheight(winnr("$"))*1/
 command! Greset !git reset
 
 " Open Time Lapse
-command! Ghist :call OpenTimeLapse()
+command! Ghist :call TimeLapse()
 
 " Fugitive commit and show diff in commit buffer
 command! -nargs=* Gchanges :exec "Git! diff " . <q-args>
