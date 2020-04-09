@@ -15,12 +15,12 @@ nnoremap <silent><leader>j :Denite jump -no-empty -auto-highlight<CR>
 
 
 " Comment line
-nmap <leader>d <plug>NERDCommenterComment
-xmap <leader>d <plug>NERDCommenterComment
+nmap <leader>c <plug>NERDCommenterComment
+xmap <leader>c <plug>NERDCommenterComment
 
 " Uncomment line
-nmap <leader>D <plug>NERDCommenterUncomment
-xmap <leader>D <plug>NERDCommenterUncomment
+nmap <leader>C <plug>NERDCommenterUncomment
+xmap <leader>C <plug>NERDCommenterUncomment
 
 
 " Go to next buffer

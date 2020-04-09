@@ -102,6 +102,9 @@ let g:NERDDefaultAlign = 'start'
 " Allow commenting and inverting empty lines (useful when commenting a region)
 let g:NERDCommentEmptyLines = 1
 
+" Use single line comments in C files.
+let g:NERDAltDelims_c = 1
+
 
 """""""""""
 " Airline "
