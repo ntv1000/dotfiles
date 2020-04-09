@@ -20,6 +20,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-sleuth'
 Plug 'Yggdroot/indentLine'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'bling/vim-bufferline'
 
 Plug 'w0rp/ale'
 Plug 'rust-lang/rust.vim'
@@ -241,3 +242,10 @@ let g:OmniSharp_timeout = 5
 " Set indentation character (good options are '|', '¦', '┆', '┊')
 let g:indentLine_char = '┆'
 let g:indentLine_fileTypeExclude = ['tex', 'markdown']
+
+
+""""""""""""""
+" bufferline "
+""""""""""""""
+let g:bufferline_show_bufnr = 0
+let g:bufferline_echo = 0
