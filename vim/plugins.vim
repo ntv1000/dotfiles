@@ -18,6 +18,8 @@ Plug 'tpope/vim-repeat'
 Plug 'lambdalisue/suda.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-sleuth'
+Plug 'Yggdroot/indentLine'
+Plug 'editorconfig/editorconfig-vim'
 
 Plug 'w0rp/ale'
 Plug 'rust-lang/rust.vim'
@@ -231,3 +233,11 @@ let g:ale_linters = { 'cs': ['OmniSharp'] }
 """""""""""""
 
 let g:OmniSharp_timeout = 5
+
+
+""""""""""""""
+" indentLine "
+""""""""""""""
+" Set indentation character (good options are '|', '¦', '┆', '┊')
+let g:indentLine_char = '┆'
+let g:indentLine_fileTypeExclude = ['tex', 'markdown']
