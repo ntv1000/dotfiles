@@ -158,6 +158,7 @@ inoremap <S-Tab> <C-P>
 " Toggle mundo
 nnoremap <leader>u :MundoToggle<CR>
 
+
 " Toggle English spellcheck
 noremap <leader>s :setlocal spell! spelllang=en_us<CR>
 
@@ -167,3 +168,10 @@ nnoremap <F5> :call ReloadBuffers()<CR>
 
 " Reload vim config
 nnoremap <leader>r :source $MYVIMRC<CR>
+
+
+" Show diff of current file
+nnoremap <leader>d :Gdiff<CR>
+
+" Show diff preview of current hunk
+nnoremap <leader>hh :GitGutterPreviewHunk<CR>
