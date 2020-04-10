@@ -190,14 +190,23 @@ function gi() {
 function fzf-findfiles {
 local files
 
+  zle kill-whole-line
 files=($(fd "$1" --type f --no-ignore --hidden --follow --exclude '.git/' | fzf --query="$1" --height=22 -m -0))
-  [[ -n "$files" ]] && vim "${files[@]}"
+  [[ -n "$files" ]] && BUFFER="vim "${files[@]}""
+  zle accept-line
+}
+
+function open-vim {
+  zle kill-whole-line
+  BUFFER="vim"
   zle accept-line
 }
 
 zle -N fzf-findfiles
+zle -N open-vim
 
 bindkey '^f' fzf-findfiles
+bindkey '^v' open-vim
 
 
 
