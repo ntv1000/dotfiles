@@ -159,11 +159,12 @@ function git-replace-author {
         fi' -- --all
 }
 
-function finddir() {
-  local dir
-  dir=$(find ${1:-.} -path '*/\.*' -prune \
-                  -o -type d -print 2> /dev/null | fzf +m) &&
-  cd "$dir"
+function finddir {
+	local dir
+
+	dir=($(fd "$1" --type d --no-ignore --hidden --follow --exclude '.git/' | fzf --query="$1" +m -0 --height=22))
+	cd "$dir"
+	zle accept-line
 }
 
 # repeat history edit
@@ -204,9 +205,11 @@ function open-vim {
 
 zle -N fzf-findfiles
 zle -N open-vim
+zle -N finddir
 
 bindkey '^f' fzf-findfiles
 bindkey '^v' open-vim
+bindkey '^g' finddir
 
 
 
