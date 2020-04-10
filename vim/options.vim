@@ -22,7 +22,7 @@ set hlsearch
 set incsearch
 
 " Keep cursor in the middle of the screen
-set scrolloff=9999
+set scrolloff=11
 
 " Auto indent by analysing filetype
 filetype plugin indent on
