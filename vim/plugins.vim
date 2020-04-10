@@ -20,7 +20,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-sleuth'
 Plug 'Yggdroot/indentLine'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'bling/vim-bufferline'
+Plug 'bagrat/vim-buffet'
 
 Plug 'w0rp/ale'
 Plug 'rust-lang/rust.vim'
@@ -244,8 +244,19 @@ let g:indentLine_char = '┆'
 let g:indentLine_fileTypeExclude = ['tex', 'markdown']
 
 
-""""""""""""""
-" bufferline "
-""""""""""""""
-let g:bufferline_show_bufnr = 0
-let g:bufferline_echo = 0
+""""""""""
+" buffet "
+""""""""""
+let g:buffet_always_show_tabline = 1
+let g:buffet_separator = ""
+let g:buffet_tab_icon = "\uf00a"
+let g:buffet_left_trunc_icon = "\uf0a8"
+let g:buffet_right_trunc_icon = "\uf0a9"
+
+function! g:BuffetSetCustomColors()
+	highlight! link BuffetCurrentBuffer cleared
+	highlight! link BuffetActiveBuffer cleared
+	highlight! link BuffetBuffer airline_c
+	highlight! link BuffetTab airline_c
+	highlight! link BuffetTrunc StatusLine
+endfunction
