@@ -28,6 +28,8 @@ def gen_git_status():
         # TODO handle the case where status doens't print a "On branch" line
         if "On branch" in line:
             branch = " ".join(line.split(" ")[2:])
+        if "HEAD detached at" in line:
+            branch = line[len("HEAD detached at")+1:]
         if "modified:" in line:
             dirty = True
         if "Untracked files:" in line:
