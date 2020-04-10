@@ -21,6 +21,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'Yggdroot/indentLine'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'bagrat/vim-buffet'
+Plug 'mhinz/vim-startify'
 
 Plug 'w0rp/ale'
 Plug 'rust-lang/rust.vim'
@@ -260,3 +261,11 @@ function! g:BuffetSetCustomColors()
 	highlight! link BuffetTab airline_c
 	highlight! link BuffetTrunc StatusLine
 endfunction
+
+
+""""""""""""
+" Startify "
+""""""""""""
+let g:startify_session_persistence = 1
+let g:startify_session_autoload = 1
+let g:startify_session_sort = 1
