@@ -20,7 +20,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-sleuth'
 Plug 'Yggdroot/indentLine'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'bagrat/vim-buffet'
 Plug 'mhinz/vim-startify'
 
 Plug 'w0rp/ale'
@@ -134,6 +133,35 @@ endif
 let g:airline_symbols.branch = ''
 
 
+" Enable tabline
+let g:airline#extensions#tabline#enabled = 1
+
+" Set minimal separators
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#right_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = ''
+
+" Show buffers in tabline
+let g:airline#extensions#tabline#show_buffers = 1
+
+" Don't show tabs in tabline
+let g:airline#extensions#tabline#show_tabs = 0
+
+" Set custom overflow marker
+let g:airline#extensions#tabline#overflow_marker = '…'
+
+" Show directories of a file if there are multiple files with the same name
+" Alternative uniqueness algorithm: 'unique_tail_improved'
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+" Don't show the close button
+let g:airline#extensions#tabline#show_close_button = 0
+
+" Don't show buffers label
+let g:airline#extensions#tabline#buffers_label = ''
+
+
 """"""""""
 " Vimtex "
 """"""""""
@@ -245,22 +273,6 @@ let g:indentLine_char = '┆'
 let g:indentLine_fileTypeExclude = ['tex', 'markdown']
 
 
-""""""""""
-" buffet "
-""""""""""
-let g:buffet_always_show_tabline = 1
-let g:buffet_separator = ""
-let g:buffet_tab_icon = "\uf00a"
-let g:buffet_left_trunc_icon = "\uf0a8"
-let g:buffet_right_trunc_icon = "\uf0a9"
-
-function! g:BuffetSetCustomColors()
-	highlight! link BuffetCurrentBuffer cleared
-	highlight! link BuffetActiveBuffer cleared
-	highlight! link BuffetBuffer airline_c
-	highlight! link BuffetTab airline_c
-	highlight! link BuffetTrunc StatusLine
-endfunction
 
 
 """"""""""""
