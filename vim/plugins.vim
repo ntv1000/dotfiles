@@ -268,16 +268,32 @@ let g:OmniSharp_timeout = 5
 """"""""""""""
 " indentLine "
 """"""""""""""
+
 " Set indentation character (good options are '|', '¦', '┆', '┊')
 let g:indentLine_char = '┆'
+
+" Exclude some file types from showing indentations
 let g:indentLine_fileTypeExclude = ['tex', 'markdown']
-
-
 
 
 """"""""""""
 " Startify "
 """"""""""""
+
+" Automatically save changes in sessions
 let g:startify_session_persistence = 1
+
+" Automatically load session file if it exists in a directory
 let g:startify_session_autoload = 1
-let g:startify_session_sort = 1
+
+" Sort sessions alphabetically
+let g:startify_session_sort = 0
+
+" Configure startify layout
+let g:startify_lists = [
+	\ { 'type': 'sessions',  'header': ['   Sessions']       },
+	\ { 'type': 'files',     'header': ['   Recent files']            },
+	\ { 'type': 'dir',       'header': ['   Files from last directory', '   -> ' . getcwd()] },
+	\ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+	\ { 'type': 'commands',  'header': ['   Commands']       },
+	\ ]
