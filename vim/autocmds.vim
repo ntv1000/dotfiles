@@ -7,12 +7,12 @@ autocmd BufNewFile,BufRead *.launch set syntax=xml
 
 
 " Autosave when leaving insert mode
-autocmd InsertLeave * silent! write
+autocmd InsertLeave * call Autosave()
 " Autosave when leaving buffer
-autocmd BufLeave * silent! write
+autocmd BufLeave * call Autosave()
 " Autosave when idling
-autocmd CursorHold * silent! write
+autocmd CursorHold * call Autosave()
 " Autosave when vim loses focus
-autocmd FocusLost * silent! write
+autocmd FocusLost * call Autosave()
 " Autosave when vim gains focus
-autocmd FocusGained * silent! write
+autocmd FocusGained * call Autosave()

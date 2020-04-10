@@ -95,3 +95,13 @@ function! ToggleEndChar(char) abort
 
 	call setline('.', l:new)
 endfunction
+
+
+" Taken and simplified from https://github.com/thaerkh/vim-workspace/blob/faa835406990171bbbeff9254303dad49bad17cb/plugin/workspace.vim#L162
+function! Autosave() abort
+	if &readonly || mode() == 'c' || pumvisible()
+		return
+	endif
+
+	silent! update  " only updates if there are changes to the file.
+endfunction

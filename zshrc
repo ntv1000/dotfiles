@@ -99,7 +99,10 @@ bindkey '^[[Z' reverse-menu-complete
 bindkey -M menuselect '^M' .accept-line
 # For this to work the escape sequence needs to be set to be mapped to a key
 # combination in the terminal emulator. In Konsole, for example, you could set
-# "Return+Ctrl" to "\E[[CE".
+# "Return+Ctrl" to "\E[[CE". Hint: Since Konsole's handling of custom keytabs
+# is buggy, creating the mapping in the GUI is not persistent. What works is
+# adding the mapping in "/usr/share/konsole/xyz.keytab" and then setting "xyz"
+# as keytab in the profile.
 bindkey '^[[[CE' autosuggest-execute
 
 # Command history
