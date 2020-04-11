@@ -105,3 +105,31 @@ function! Autosave() abort
 
 	silent! update  " only updates if there are changes to the file.
 endfunction
+
+
+" Move the cursor in the denite buffer by `offset`. If the new cursor position
+" would be above the first line the cursor will be placed on the last line and
+" if the new cursor position would be below the last line it will be placed on
+" the first line. `g:denite_win_id` needs to be set to the window id of the
+" denite window for this function to work.
+function! DeniteMoveCursor(offset) abort
+	let l:bufnr = winbufnr(g:denite_win_id)
+
+	python import vim
+	let l:numlines = pyeval('len(vim.buffers['.(l:bufnr).'])')
+
+	let l:pos = nvim_win_get_cursor(g:denite_win_id)
+	let l:first_row = 1
+	let l:last_row = l:numlines
+	let l:new_row = l:pos[0] + a:offset
+
+	if l:new_row < l:first_row
+		let l:new_row = l:last_row
+	endif
+
+	if l:new_row > l:last_row
+		let l:new_row = l:first_row
+	endif
+
+	call nvim_win_set_cursor(g:denite_win_id, [l:new_row, 0])
+endfunction

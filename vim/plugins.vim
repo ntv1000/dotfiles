@@ -47,6 +47,8 @@ function! s:denite_my_settings() abort
 	nnoremap <silent><buffer><expr> <ESC> denite#do_map('quit')
 	nnoremap <silent><buffer><expr> i denite#do_map('open_filter_buffer')
 	nnoremap <silent><buffer><expr> <Space> denite#do_map('toggle_select').'j'
+
+	let g:denite_win_id = win_getid()
 endfunction
 
 " Settings for filter buffer
@@ -62,8 +64,8 @@ function! s:denite_filter_my_settings() abort
 	call deoplete#custom#buffer_option('auto_complete', v:false)
 
 	" Add binding for going up/down while in insert mode
-	inoremap <silent><buffer> <C-j> <Esc><C-w>pj<C-w>pA
-	inoremap <silent><buffer> <C-k> <Esc><C-w>pk<C-w>pA
+	inoremap <silent><buffer> <C-j> <ESC>:call DeniteMoveCursor(1)<CR>A
+	inoremap <silent><buffer> <C-k> <ESC>:call DeniteMoveCursor(-1)<CR>A
 endfunction
 
 " Use ripgrep in grep source
@@ -76,21 +78,6 @@ call denite#custom#var('grep', 'final_opts', [])
 
 " Enable narrowing by path in grep source
 call denite#custom#source('grep', 'converters', ['converter/abbr_word'])
-
-" Enable moving between lines while in insert mode
-" TODO These do not work anymore
-call denite#custom#map(
-	\ 'insert',
-	\ '<C-j>',
-	\ '<denite:move_to_next_line>',
-	\ 'noremap'
-	\)
-call denite#custom#map(
-	\ 'insert',
-	\ '<C-k>',
-	\ '<denite:move_to_previous_line>',
-	\ 'noremap'
-	\)
 
 
 """""""""""""""
