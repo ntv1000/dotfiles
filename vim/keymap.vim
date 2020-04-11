@@ -175,3 +175,7 @@ nnoremap <leader>d :Gdiff<CR>
 
 " Show diff preview of current hunk
 nnoremap <leader>hh :GitGutterPreviewHunk<CR>
+
+
+" Show startify page
+nnoremap <leader>s :Startify<CR>

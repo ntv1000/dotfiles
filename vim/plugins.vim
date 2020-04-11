@@ -48,6 +48,7 @@ function! s:denite_my_settings() abort
 	nnoremap <silent><buffer><expr> i denite#do_map('open_filter_buffer')
 	nnoremap <silent><buffer><expr> <Space> denite#do_map('toggle_select').'j'
 
+	" Store windows-ID of filter window (used for DeniteMoveCursor())
 	let g:denite_win_id = win_getid()
 endfunction
 
