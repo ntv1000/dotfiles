@@ -97,13 +97,34 @@ function! ToggleEndChar(char) abort
 endfunction
 
 
+" TODO Make a vim plugin out of this
+" Alternatives:
+" https://github.com/vim-scripts/vim-auto-save/
+" Problems: screws up undo history, does not respect readonly files
+" https://github.com/vim-scripts/vim-auto-save/
+" Problems: Actually creates backups, autosaves periodically after a fixed time interval
+
+let g:autosave_enabled = 0
+
 " Taken and simplified from https://github.com/thaerkh/vim-workspace/blob/faa835406990171bbbeff9254303dad49bad17cb/plugin/workspace.vim#L162
 function! Autosave() abort
-	if &readonly || mode() == 'c' || pumvisible()
-		return
-	endif
+	if g:autosave_enabled == 1
+		if &readonly || mode() == 'c' || pumvisible()
+			return
+		endif
 
-	silent! update  " only updates if there are changes to the file.
+		silent! update " only updates if there are changes to the file.
+	endif
+endfunction
+
+function! AutosaveToggle() abort
+	if g:autosave_enabled == 1
+		let g:autosave_enabled = 0
+		echo "Autosave OFF"
+	else
+		let g:autosave_enabled = 1
+		echo "Autosave ON"
+	endif
 endfunction
 
 
