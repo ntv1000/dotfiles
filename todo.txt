@@ -1,18 +1,8 @@
-TODO fix prompt when there is no current branch
 TODO Erase bad whitespace in fugitive buffers
-TODO incsearch.vim
 TODO use snippet plugin
-TODO alias to open environment for project
 TODO better file structure: separate .bash_aliases file, install scripts like prompt.py with dotbot as well
-TODO buffergator try to remove status line
-TODO close buffergator if below a certain terminal size
 TODO @@ should execute last set macro "nmap q if Recording() then..."
 TODO https://vimawesome.com/plugin/surround-vim (maybe https://vimawesome.com/plugin/repeat-vim)
-
-BUG fix error in docs:
-let g:bufExplorerSplitVertSize=n          " New split window is n columns wide.
-should be:
-let g:bufExplorerSplitVertSize=n          " New split window is n columns wide.
 
 NOTES
 - General
