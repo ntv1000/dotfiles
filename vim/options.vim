@@ -65,3 +65,6 @@ set nostartofline
 " Disable netrw
 let g:loaded_netrw       = 1
 let g:loaded_netrwPlugin = 1
+
+" Enable moving past last character of line in visual block mode
+set virtualedit=block
