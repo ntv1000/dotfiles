@@ -81,9 +81,9 @@ call denite#custom#var('grep', 'final_opts', [])
 call denite#custom#source('grep', 'converters', ['converter/abbr_word'])
 
 
-"""""""""""""""
-" NERDcomment "
-"""""""""""""""
+"""""""""""""""""
+" NERDcommenter "
+"""""""""""""""""
 
 " Disable default mappings
 let g:NERDCreateDefaultMappings = 0
