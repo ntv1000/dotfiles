@@ -144,9 +144,9 @@ nnoremap <silent> * :keepjumps normal! mp*`p<CR>:delmarks p<CR>
 
 
 " Run Make
-nnoremap <leader>b :make<CR>
+nnoremap <leader>b :call OpenSplitTerm("make build")<CR>
 " Open terminal and execute make
-nnoremap <leader>x :call OpenSplitTerm("make")<CR>
+nnoremap <leader>x :call OpenSplitTerm("make run")<CR>
 
 
 " Start tab-completion and next item on the completion list
