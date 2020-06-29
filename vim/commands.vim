@@ -1,5 +1,5 @@
 " Search for all TODO comments recursively
-command! TODO Denite grep -mode=normal -auto-preview=true -default-action=switch -input=TODO
+command! TODO Denite grep -auto-action=preview -default-action=switch -input=TODO
 
 
 " Fugitive commit and show diff in commit buffer
