@@ -1,5 +1,6 @@
 [credential]
 	helper = cache --timeout=36000
+
 [alias]
 	lg1 = log --graph --abbrev-commit --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
 	lg = lg1 --branches --remotes
@@ -8,6 +9,8 @@
 	cop = !"git diff -p -R --no-color | grep -E \"^(diff|(old|new) mode)\" --color=never | git apply"
 
 	rmgone = !"git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done"
+
+	ignore = update-index --assume-unchanged
 
 [merge]
 	tool = vimdiff
