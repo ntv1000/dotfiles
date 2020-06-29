@@ -61,3 +61,7 @@ set tagrelative
 
 " Save cursor position when switching buffer
 set nostartofline
+
+" Disable netrw
+let g:loaded_netrw       = 1
+let g:loaded_netrwPlugin = 1
