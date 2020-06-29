@@ -27,6 +27,11 @@ export VISUAL=nvim
 autoload -U colors && colors
 autoload -Uz promptinit && promptinit
 
+# Edit command line in default editor when pressing E in normal mode
+autoload edit-command-line;
+zle -N edit-command-line
+bindkey -M vicmd E edit-command-line
+
 KEYTIMEOUT=1
 setopt PROMPT_SUBST
 setopt MENU_COMPLETE
