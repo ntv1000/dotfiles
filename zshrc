@@ -60,6 +60,12 @@ function fzf-history {
     zle accept-line
 }
 
+function fzf-file {
+    zle kill-whole-line
+    BUFFER=" ff"
+    zle accept-line
+}
+
 function my-popd {
     zle kill-whole-line
     BUFFER="popd -q"
@@ -69,6 +75,7 @@ function my-popd {
 zle -N zle-line-init
 zle -N zle-keymap-select
 zle -N fzf-history
+zle -N fzf-file
 zle -N my-popd
 
 # Completion
@@ -94,6 +101,7 @@ zle -N down-line-or-beginning-search
 bindkey '^k' up-line-or-beginning-search
 bindkey '^j' down-line-or-beginning-search
 bindkey '^r' fzf-history
+bindkey '^f' fzf-file
 bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
@@ -194,6 +202,9 @@ function gi() {
 	else
 		__gi "$@"
 	fi
+}
+function ff() {
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac --height 12 | sed -r 's/ *[0-9]*\*? *//' | sed -r 's/\\/\\\\/g')
 }
 
 function fzf-findfiles {
