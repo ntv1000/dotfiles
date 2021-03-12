@@ -160,7 +160,7 @@ nnoremap <leader>u :MundoToggle<CR>
 
 
 " Toggle English spellcheck
-noremap <leader>s :setlocal spell! spelllang=en_us<CR>
+noremap <leader>l :setlocal spell! spelllang=en_us<CR>
 
 
 " Reload all buffers
