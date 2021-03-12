@@ -68,3 +68,7 @@ let g:loaded_netrwPlugin = 1
 
 " Enable moving past last character of line in visual block mode
 set virtualedit=block
+
+" Disable concealing of character (e.g. quotes in JSON files)
+" This setting is reset to 0 by the indentLine plugin
+set conceallevel=0
