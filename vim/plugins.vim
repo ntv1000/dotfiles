@@ -243,7 +243,20 @@ let g:gitgutter_sign_modified_removed   = '●_'
 """""""
 
 " Enable OmniSharp linter
-let g:ale_linters = { 'cs': ['OmniSharp'] }
+let g:ale_linters = {
+\	'cs': ['OmniSharp'],
+\	'python': ['flake8'],
+\	'cpp': ['clangd']
+\}
+
+" Read compile commands from compile_commands.json
+let g:ale_c_parse_compile_commands = 1
+
+"let g:ale_sign_error = '✖'
+"let g:ale_sign_warning = '▲'
+"let g:ale_sign_info = '○'    " untested
+"let g:ale_sign_style_error = ''
+"let g:ale_sign_style_warning = ''
 
 
 """""""""""""
