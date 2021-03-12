@@ -275,6 +275,7 @@ let g:indentLine_char = '┆'
 
 " Exclude some file types from showing indentations
 let g:indentLine_fileTypeExclude = ['tex', 'markdown']
+let g:indentLine_concealcursor = ''
 
 
 """"""""""""
