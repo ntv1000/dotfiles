@@ -179,3 +179,10 @@ nnoremap <leader>hh :GitGutterPreviewHunk<CR>
 
 " Show startify page
 nnoremap <leader>s :Startify<CR>
+
+
+" ALE bindings
+nnoremap <leader>ad :ALEGoToDefinition<CR>
+nnoremap <leader>ah :ALEHover<CR>
+nnoremap <leader>ar :ALEFindReferences<CR>
+nnoremap <leader>ax :ALEReset<CR>
