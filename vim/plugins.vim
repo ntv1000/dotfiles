@@ -7,7 +7,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/git-time-lapse'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/denite.nvim'
+Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'kshenoy/vim-signature'
 Plug 'scrooloose/nerdcommenter'
 Plug 'simnalamburt/vim-mundo'
@@ -59,7 +59,7 @@ function! s:denite_filter_my_settings() abort
 	imap <silent><buffer> <Esc> <Plug>(denite_filter_quit)
 
 	" Do action directly from insert mode
-	imap <silent><buffer> <CR> <Plug>(denite_filter_quit)<CR>
+	imap <silent><buffer><expr> <CR> denite#do_map('do_action')
 
 	" Disable autocompletion when filtering
 	call deoplete#custom#buffer_option('auto_complete', v:false)
