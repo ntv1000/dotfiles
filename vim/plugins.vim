@@ -246,11 +246,14 @@ let g:gitgutter_sign_modified_removed   = '●_'
 let g:ale_linters = {
 \	'cs': ['OmniSharp'],
 \	'python': ['flake8'],
-\	'cpp': ['clangd']
+\	'cpp': ['clangd'],
 \}
 
 " Read compile commands from compile_commands.json
 let g:ale_c_parse_compile_commands = 1
+
+" Add directory names to look for compile_commands.json
+let g:ale_c_build_dir_names = ['build', 'bin', 'build_debug', 'build_release']
 
 "let g:ale_sign_error = '✖'
 "let g:ale_sign_warning = '▲'
