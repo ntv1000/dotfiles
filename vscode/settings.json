@@ -1,0 +1,148 @@
+{
+    "telemetry.telemetryLevel": "off",
+
+    "editor.rulers": [80, 120],
+
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "y"],
+            "after": ["\"", "+", "y"]
+        },
+        {
+            "before": ["<leader>", "p"],
+            "after": ["\"", "+", "p"]
+        },
+        {
+            "before": [";"],
+            "commands": ["extension.toggleSemicolon"]
+        },
+        {
+            "before": ["<leader>", "c"],
+            "commands": ["editor.action.commentLine"]
+        },
+    ],
+
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "p"],
+            "after": ["o", "<Esc>", "\"", "+", "p"]
+        },
+        {
+            "before": ["x"],
+            "after": ["\"", "_", "x"]
+        },
+        {
+            "before": ["u"],
+            "commands": ["undo"]
+        },
+        {
+            "before": ["C-r"],
+            "commands": ["redo"]
+        },
+        {
+            "before": ["C-O"],
+            "after": ["J"],
+        },
+        {
+            "before": ["J"],
+            "commands": ["workbench.action.nextEditor"]
+            // Alternatively: workbench.action.nextEditorInGroup
+        },
+        {
+            "before": ["K"],
+            "commands": ["workbench.action.previousEditor"]
+            // Alternatively: workbench.action.previousEditorInGroup
+        },
+        {
+            "before": ["H"],
+            "commands": ["workbench.action.navigateBack"]
+        },
+        {
+            "before": ["L"],
+            "commands": ["workbench.action.navigateForward"]
+        },
+        {
+            "before": ["<CR>"],
+            "commands": ["workbench.action.files.save"]
+        },
+        {
+            "before": ["<leader>", "f"],
+            "commands": ["workbench.action.quickOpen"]
+        },
+        {
+            "before": ["<leader>", "g"],
+            "commands": ["workbench.action.findInFiles"]
+        },
+        {
+            "before": ["<backspace>"],
+            "commands": ["workbench.action.closeActiveEditor"]
+        },
+        {
+            "before": ["tab"],
+            "commands": ["workbench.action.quickOpenPreviousRecentlyUsedEditor"]
+        },
+        {
+            "before": ["#"],
+            "commands": ["workbench.action.quickOpenPreviousRecentlyUsedEditor", "workbench.action.acceptSelectedQuickOpenItem"]
+        },
+        {
+            "before": [";"],
+            "commands": ["extension.toggleSemicolon"]
+        },
+        {
+            "before": ["<leader>", "c"],
+            "commands": ["editor.action.commentLine"]
+        },
+        {
+            "before": ["?"],
+            "commands": ["editor.action.showHover"]
+        },
+    ],
+    "vim.leader": ",",
+    "editor.suggest.preview": true,
+    "cmake.configureOnOpen": true,
+    "cmake.buildDirectory": "${workspaceFolder}/build/${buildType}",
+    "editor.minimap.size": "fit",
+    "editor.cursorSurroundingLines": 11,
+    "editorconfig.generateAuto": false,
+    "editor.fontFamily": "'Source Code Pro', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.quickSuggestionsDelay": 0,
+    "window.titleBarStyle": "custom",
+    "gitlens.statusBar.enabled": false,
+    "gitlens.defaultDateFormat": "MMMM Do, YYYY H:mm",
+    "gitlens.defaultTimeFormat": "H:mm",
+    "gitlens.defaultDateShortFormat": null,
+    "gitlens.codeLens.enabled": false,
+    "editor.wordWrap": "on",
+    "editor.wrappingIndent": "none",
+    "editor.cursorBlinking": "solid",
+    "editor.fontSize": 16,
+    "vim.enableNeovim": true,
+    "editor.bracketPairColorization.enabled": true,
+
+    "editor.semanticTokenColorCustomizations": {
+        "[One Dark Pro]": {
+            // Apply to this theme only
+            "enabled": true,
+            "rules": {
+                "variable.local": "#ABB2BF",
+            }
+        },
+        "[One Dark Pro Darker]": {
+            // Apply to this theme only
+            "enabled": true,
+            "rules": {
+                "variable.local": "#ABB2BF",
+            }
+        }
+    },
+    "workbench.colorTheme": "One Dark Pro Darker",
+    "editor.suggestSelection": "first",
+    "editor.renderWhitespace": "trailing",
+    "C_Cpp.autocompleteAddParentheses": true
+
+    "todo-tree.tree.showBadges": true,
+    "todo-tree.tree.showCountsInTree": true,
+    "todo-tree.tree.disableCompactFolders": false,
+    "todo-tree.tree.scanMode": "open files"
+}
