@@ -12,18 +12,27 @@
 
 	ignore = update-index --assume-unchanged
 
+	hide = update-index --skip-worktree
+	unhide = update-index --no-skip-worktree
+	hidden = !"git ls-files -v . | grep ^S"
+
+
 [merge]
-	tool = vimdiff
 	conflictstyle = diff3
+	#tool = nvim
+	tool = vscode
+
 # define command which will be used when "nvim" is set as a merge tool
 [mergetool "nvim"]
 	cmd = MYVIMRC=\"$HOME/.vimrc\" nvim -u $HOME/.vimrc -f -c \"Gvdiffsplit!\" \"$MERGED\"
-# set "nvim" as tool for merging
-[merge]
-	tool = nvim
+
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
+
 # automatically launch merge tool without displaying a prompt
 [mergetool]
 	prompt = false
+
 
 [diff]
 	wsErrorHighlight = all

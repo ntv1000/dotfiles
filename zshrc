@@ -38,6 +38,9 @@ setopt MENU_COMPLETE
 setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
 
+# Make zsh pattern expansion behave like bash, as in a pattern matching no file is passed to the command unchanged
+setopt nonomatch
+
 # Prompt
 precmd() {
 	PROMPT="$(python3 ~/dotfiles/scripts/prompt.py)"
