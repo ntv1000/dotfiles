@@ -22,11 +22,13 @@
     },
     {
         "key": "ctrl+j",
-        "command": "workbench.action.quickOpenSelectNext"
+        "command": "workbench.action.quickOpenSelectNext",
+        "when": "inQuickOpen"
     },
     {
         "key": "ctrl+k",
-        "command": "workbench.action.quickOpenSelectPrevious"
+        "command": "workbench.action.quickOpenSelectPrevious",
+        "when": "inQuickOpen"
     },
     {
         "key": "ctrl+tab",
@@ -40,5 +42,45 @@
     {
         "key": "ctrl+shift+alt+i",
         "command": "editor.action.inspectTMScopes"
-    }
+    },
+    {
+        "key": "ctrl+shift+q",
+        "command": "git.timeline.openDiff"
+    },
+    {
+        "key": "ctrl+[Semicolon]",
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "terminal.active"
+    },
+    {
+        "key": "ctrl+shift+[Equal]",
+        "command": "-workbench.action.terminal.toggleTerminal",
+        "when": "terminal.active"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "-extension.vim_ctrl+k",
+        "when": "editorTextFocus && vim.active && vim.use<C-k> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+m",
+        "command": "-editor.action.toggleTabFocusMode"
+    },
+    {
+        "key": "ctrl+m",
+        "command": "workbench.actions.view.problems",
+        "when": "workbench.panel.markers.view.active"
+    },
+    {
+        "key": "ctrl+shift+m",
+        "command": "-workbench.actions.view.problems",
+        "when": "workbench.panel.markers.view.active"
+    },
+    // {
+    //     "key": "escape",
+    //     "command": "workbench.action.toggleSidebarVisibility",
+    //     "when": "sideBarFocus"
+    //     // Alternatively:
+    //     // "when": "sideBarVisible"
+    // }
 ]

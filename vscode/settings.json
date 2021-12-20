@@ -122,9 +122,12 @@
             "commands": ["editor.action.dirtydiff.next"]
         },
     ],
+    "vim.handleKeys": {
+        "<C-m>": false
+    },
     "vim.leader": ",",
     "editor.suggest.preview": true,
-    "cmake.configureOnOpen": true,
+    "cmake.configureOnOpen": false,
     "cmake.buildDirectory": "${workspaceFolder}/build/${buildType}",
     "editor.minimap.size": "fit",
     "editor.cursorSurroundingLines": 11,
@@ -142,21 +145,28 @@
     "editor.cursorBlinking": "solid",
     "editor.fontSize": 16,
     "vim.enableNeovim": true,
+    "settingsSync.ignoredSettings": [
+        "vim.enableNeovim",
+        "-C_Cpp.default.includePath"
+    ],
+    "cmake.configureOnEdit": false,
+    "extensions.ignoreRecommendations": true,
+    "C_Cpp.intelliSenseCacheSize": 0,
     "editor.bracketPairColorization.enabled": true,
-
+    
     "editor.semanticTokenColorCustomizations": {
         "[One Dark Pro]": {
-            // Apply to this theme only
             "enabled": true,
             "rules": {
                 "variable.local": "#ABB2BF",
+                "parameter": "#F3AEAE"
             }
         },
         "[One Dark Pro Darker]": {
-            // Apply to this theme only
             "enabled": true,
             "rules": {
                 "variable.local": "#ABB2BF",
+                "parameter": "#F3AEAE"
             }
         }
     },
@@ -171,4 +181,8 @@
     "todo-tree.tree.scanMode": "open files",
     "terminal.integrated.defaultProfile.linux": "zsh",
     "diffEditor.ignoreTrimWhitespace": false,
+    "[Log]": {
+        "editor.wordWrap": "on"
+    },
+    "output.smartScroll.enabled": false,
 }
