@@ -11,7 +11,7 @@ nnoremap <silent><Tab> :Denite buffer -no-empty -start-filter -immediately-1<CR>
 " Open denite for searching help files
 nnoremap <silent><F1> :Denite help -no-empty -start-filter<CR>
 " Open denite for searching jumps
-nnoremap <silent><leader>j :Denite jump -no-empty -auto-action=highlight<CR>
+nnoremap <silent><leader>j :Denite jump -no-empty -auto-action=preview<CR>
 " Open denite for searching marks
 nnoremap <leader>m :Denite mark -no-empty -auto-action=highlight<CR>
 " Open denite for searching outline

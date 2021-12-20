@@ -248,12 +248,26 @@ let g:ale_linters = {
 \	'python': ['flake8'],
 \	'cpp': ['clangd'],
 \}
+"\	'cpp': ['clangd', 'clangtidy'],
 
 " Read compile commands from compile_commands.json
 let g:ale_c_parse_compile_commands = 1
 
 " Add directory names to look for compile_commands.json
 let g:ale_c_build_dir_names = ['build', 'bin', 'build_debug', 'build_release']
+
+" For a list of available checks see https://clang.llvm.org/extra/clang-tidy/
+let g:ale_cpp_clangtidy_checks = [
+\	'*',
+\	'-darwin-*',
+\	'-fuchsia-*',
+\	'-linuxkernel-*',
+\	'-llvm-*',
+\	'-llvmlibc-*',
+\	'-modernize-use-trailing-return-type',
+\	'-google-readability-todo',
+\	'-google-readability-namespace-comments',
+\]
 
 "let g:ale_sign_error = '✖'
 "let g:ale_sign_warning = '▲'
