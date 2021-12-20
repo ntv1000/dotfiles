@@ -36,3 +36,8 @@
 
 [diff]
 	wsErrorHighlight = all
+
+[core]
+	autocrlf = false
+[init]
+	defaultBranch = main
