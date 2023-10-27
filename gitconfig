@@ -18,7 +18,7 @@
 
 
 [merge]
-	conflictstyle = diff3
+	conflictstyle = zdiff3
 	#tool = nvim
 	tool = vscode
 
@@ -39,5 +39,8 @@
 
 [core]
 	autocrlf = false
+	editor = nvim
 [init]
 	defaultBranch = main
+[push]
+	autoSetupRemote = true
