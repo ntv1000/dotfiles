@@ -14,6 +14,7 @@
     ~/.zsh: zsh
     ~/.config/Code/User/settings.json: vscode/settings.json
     ~/.config/Code/User/keybindings.json: vscode/keybindings.json
+    ~/.config/jj/config.toml: jj/config.toml
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
